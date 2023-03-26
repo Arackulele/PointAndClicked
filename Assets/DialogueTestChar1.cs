@@ -22,11 +22,50 @@ public class DialogueTestChar1 : DialogueManager
 
         addText("\n\nWhys you just say test dialogue char 2");
 
+        addText("\n\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
+        addText("\n\nno idea mate");
+
         otherSpeaker = GameObject.Find("DialogueTree2");
         dialogue = gameObject.GetComponent<TextMeshProUGUI>();
         dialogueOther = otherSpeaker.GetComponent<TextMeshProUGUI>();
 
         dialogueOther.color = new Color(0.01176f, 0.09412f, 0.16078f);
     }
+
 
 }

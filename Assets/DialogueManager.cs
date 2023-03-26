@@ -22,6 +22,8 @@ public class DialogueManager : MonoBehaviour
             texts[i] = "stop";
         }
 
+        addText("No text was found for this Character, this is either because of an error or i just havent implemented it yet");
+
         otherSpeaker = GameObject.Find("DialogueTree2");
         dialogue = gameObject.GetComponent<TextMeshProUGUI>();
         dialogueOther = otherSpeaker.GetComponent<TextMeshProUGUI>();
@@ -32,6 +34,7 @@ public class DialogueManager : MonoBehaviour
 
 public void call()
 {
+        Debug.Log("called textstart");
 
         StartCoroutine(TextStart());
 
@@ -39,26 +42,33 @@ public void call()
 
     public IEnumerator TextStart()
     {
+
+        yield return new WaitForSeconds(0.5f);
+
         int i = 0;
+
+        Debug.Log(i);
 
         while (texts[i] != "stop")
         {
-            if (i%2!=0)
+            if (i % 2 != 0)
             {
+
+                Debug.Log("playing text");
 
                 yield return PlayText(texts[i], dialogueOther);
 
             }
-                else yield return PlayText(texts[i], dialogue);
+            else
+            {
+                Debug.Log("playing text");
+                yield return PlayText(texts[i], dialogue);
 
-        float t = 0.5f;
-		foreach (char c in texts[i]) 
-		{
-            t += 0.125f;
-        }
-        yield return new WaitForSeconds(t);
+            }
 
-                yield return waitForKeyPress(KeyCode.Space);
+
+
+         yield return waitForKeyPress(KeyCode.Mouse0);
 
             i++;
         }
@@ -76,7 +86,7 @@ public void call()
 		foreach (char c in TextToPlay) 
 		{
 			speaker.text += c;
-			yield return new WaitForSeconds (0.125f);
+			yield return new WaitForSeconds (0.075f);
 		}
 	}
 
@@ -99,7 +109,8 @@ public void call()
 
         int i = 0;
 
-        while(texts[i] != "stop"){
+        while(texts[i] != "stop")
+        {
             i++;
             Debug.Log("Skipped");
         }
