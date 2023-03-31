@@ -9,9 +9,12 @@ public class DialogueManager : MonoBehaviour
 {
     public string[] texts;
     public bool[] question;
-    public int[] answeramount;
+    public int[] answers;
     public GameObject otherSpeaker;
     public GameObject optionone;
+    public GameObject optiontwo;
+    public GameObject optionthree;
+    public GameObject optionfour;
 
     public TextMeshProUGUI dialogue;
     public TextMeshProUGUI dialogueOther;
@@ -24,7 +27,7 @@ public class DialogueManager : MonoBehaviour
 
         setup();
 
-        addText("No text was found for this Character, this is either because of an error or i just havent implemented it yet", false, 0);
+        addText("No text was found for this Character, this is either because of an error or i just havent implemented it yet");
 
 
 
@@ -36,12 +39,15 @@ public class DialogueManager : MonoBehaviour
 
         texts = new string[99];
         question = new bool[99];
+        answers = new int[99];
 
         for (int i = 0; i < texts.Length; i++)
         {
             texts[i] = "stop";
             question[i] = false;
+            answers[i] = 0;
         }
+
 
         otherSpeaker = GameObject.Find("DialogueTree2");
         optionone = GameObject.Find("DialogueOption1");
@@ -87,12 +93,16 @@ public class DialogueManager : MonoBehaviour
 
             }
 
-            if (question[i])
+            if (question[i] == true)
             {
+                Debug.Log("question");
+                optionone.SetActive(true);
+                option1.text = "test";
 
+
+                waitForKeyPress(KeyCode.Mouse0);
 
             }
-
             else yield return waitForKeyPress(KeyCode.Mouse0);
 
             i++;
@@ -130,7 +140,7 @@ public class DialogueManager : MonoBehaviour
         // now this function returns
     }
 
-    public void addText(string TextToAdd, bool IsQuestion, int answeramount)
+    public void addText(string TextToAdd)
     {
 
         int i = 0;
@@ -143,7 +153,25 @@ public class DialogueManager : MonoBehaviour
 
         texts[i] = TextToAdd;
 
-        if (IsQuestion) question[i] = true;
+        Debug.Log("Added " + TextToAdd);
+    }
+
+    public void addQuestion(string TextToAdd, int answeramount, string answer1, string answer2, string answer3, string answer4)
+    {
+
+        int i = 0;
+
+        while (texts[i] != "stop")
+        {
+            i++;
+            Debug.Log("Skipped");
+        }
+
+        texts[i] = TextToAdd;
+
+        question[i] = true;
+
+        if (answeramount != 0) answers[i] = answeramount;
 
         Debug.Log("Added " + TextToAdd);
     }
