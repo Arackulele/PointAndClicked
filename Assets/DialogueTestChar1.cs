@@ -15,7 +15,7 @@ public class DialogueTestChar1 : DialogueManager
 
         addText("Balled");
 
-        addQuestion("\nTest Dialogue Char 2", 0, "Test answer", null, null, null);
+        addQuestion("\nTest Dialogue Char 2", 2, "Test answer", null, null, null);
 
         addText("\n\nWhys you just say test dialogue char 2");
 

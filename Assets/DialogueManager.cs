@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public bool[] question;
     public int[] answers;
     public GameObject otherSpeaker;
+
     public GameObject optionone;
     public GameObject optiontwo;
     public GameObject optionthree;
@@ -20,6 +21,9 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueOther;
 
     public TextMeshProUGUI option1;
+    public TextMeshProUGUI option2;
+    public TextMeshProUGUI option3;
+    public TextMeshProUGUI option4;
 
     // Start is called before the first frame update
     void Start()
@@ -51,10 +55,18 @@ public class DialogueManager : MonoBehaviour
 
         otherSpeaker = GameObject.Find("DialogueTree2");
         optionone = GameObject.Find("DialogueOption1");
+        optiontwo = GameObject.Find("DialogueOption2");
+        optionthree = GameObject.Find("DialogueOption3");
+        optionfour = GameObject.Find("DialogueOption4");
 
         dialogue = gameObject.GetComponent<TextMeshProUGUI>();
         dialogueOther = otherSpeaker.GetComponent<TextMeshProUGUI>();
+
         option1 = optionone.GetComponent<TextMeshProUGUI>();
+        option2 = optiontwo.GetComponent<TextMeshProUGUI>();
+        option3 = optionthree.GetComponent<TextMeshProUGUI>();
+        option4 = optionfour.GetComponent<TextMeshProUGUI>();
+        option4 = optionfour.GetComponent<TextMeshProUGUI>();
 
     }
 
@@ -96,13 +108,32 @@ public class DialogueManager : MonoBehaviour
             if (question[i] == true)
             {
                 Debug.Log("question");
+
                 optionone.SetActive(true);
                 option1.text = "test";
 
+                if (answers[i] > 1)
+                {
+                    optiontwo.SetActive(true);
+                    option2.text = "test";
+                }
+
+                if (answers[i] > 2)
+                {
+                    optionthree.SetActive(true);
+                    option3.text = "test";
+                }
+
+                if (answers[i] > 3)
+                {
+                    optionfour.SetActive(true);
+                    option4.text = "test";
+                }
 
                 waitForKeyPress(KeyCode.Mouse0);
 
             }
+
             else yield return waitForKeyPress(KeyCode.Mouse0);
 
             i++;
@@ -128,16 +159,16 @@ public class DialogueManager : MonoBehaviour
     public IEnumerator waitForKeyPress(KeyCode key) // blatantly stolen
     {
         bool done = false;
-        while (!done) // essentially a "while true", but with a bool to break out naturally
+        while (!done) 
         {
             if (Input.GetKeyDown(key))
             {
-                done = true; // breaks the loop
+                done = true; 
             }
-            yield return null; // wait until next frame, then continue execution from here (loop continues)
+            yield return null; 
         }
 
-        // now this function returns
+
     }
 
     public void addText(string TextToAdd)

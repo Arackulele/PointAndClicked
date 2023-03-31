@@ -350,7 +350,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230778542}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
@@ -3045,6 +3045,9 @@ MonoBehaviour:
   dialogue: {fileID: 0}
   dialogueOther: {fileID: 0}
   option1: {fileID: 0}
+  option2: {fileID: 0}
+  option3: {fileID: 0}
+  option4: {fileID: 0}
 --- !u!114 &1351817714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3068,6 +3071,9 @@ MonoBehaviour:
   dialogue: {fileID: 0}
   dialogueOther: {fileID: 0}
   option1: {fileID: 0}
+  option2: {fileID: 0}
+  option3: {fileID: 0}
+  option4: {fileID: 0}
 --- !u!114 &1351817715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3075,7 +3081,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351817709}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
@@ -3471,7 +3477,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1351817714}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: call
         m_Mode: 1
