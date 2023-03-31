@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public string[] texts;
     public bool[] question;
     public int[] answers;
+    public string[][] answershere;
     public GameObject otherSpeaker;
 
     public GameObject optionone;
@@ -44,12 +45,15 @@ public class DialogueManager : MonoBehaviour
         texts = new string[99];
         question = new bool[99];
         answers = new int[99];
+        answershere = new string[99][];
+
 
         for (int i = 0; i < texts.Length; i++)
         {
             texts[i] = "stop";
             question[i] = false;
             answers[i] = 0;
+            answershere[i] = new string[4] { "No_Text", "No_Text", "No_Text", "No_Text" };
         }
 
 
@@ -110,31 +114,30 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("question");
 
                 optionone.SetActive(true);
-                option1.text = "test";
+                option1.text = answershere[i][0];
 
                 if (answers[i] > 1)
                 {
                     optiontwo.SetActive(true);
-                    option2.text = "test";
+                    option2.text = answershere[i][1];
                 }
 
                 if (answers[i] > 2)
                 {
                     optionthree.SetActive(true);
-                    option3.text = "test";
+                    option3.text = answershere[i][2];
                 }
 
                 if (answers[i] > 3)
                 {
                     optionfour.SetActive(true);
-                    option4.text = "test";
+                    option4.text = answershere[i][3];
                 }
 
-                waitForKeyPress(KeyCode.Mouse0);
 
             }
 
-            else yield return waitForKeyPress(KeyCode.Mouse0);
+            yield return waitForKeyPress(KeyCode.Mouse0);
 
             i++;
         }
@@ -203,6 +206,12 @@ public class DialogueManager : MonoBehaviour
         question[i] = true;
 
         if (answeramount != 0) answers[i] = answeramount;
+
+
+        answershere[i] = new string[4] { answer1, answer2, answer3, answer4 };
+
+
+
 
         Debug.Log("Added " + TextToAdd);
     }
