@@ -26,6 +26,11 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI option3;
     public TextMeshProUGUI option4;
 
+    Answer answer1;
+    Answer answer2;
+    Answer answer3;
+    Answer answer4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -116,28 +121,58 @@ public class DialogueManager : MonoBehaviour
                 optionone.SetActive(true);
                 option1.text = answershere[i][0];
 
+                answer1 = optionone.GetComponent<Answer>();
+                answer2 = optionone.GetComponent<Answer>();
+                answer3 = optionone.GetComponent<Answer>();
+                answer4 = optionone.GetComponent<Answer>();
+
                 if (answers[i] > 1)
                 {
                     optiontwo.SetActive(true);
                     option2.text = answershere[i][1];
+                    answer2 = optiontwo.GetComponent<Answer>();
                 }
 
                 if (answers[i] > 2)
                 {
                     optionthree.SetActive(true);
                     option3.text = answershere[i][2];
+                    answer3 = optionthree.GetComponent<Answer>();
                 }
 
                 if (answers[i] > 3)
                 {
                     optionfour.SetActive(true);
                     option4.text = answershere[i][3];
+                    Answer answerfour = optionfour.GetComponent<Answer>();
                 }
 
 
+
+                while (answer1.didReturn() == true || answer2.didReturn() == true || answer3.didReturn() == true || answer4.didReturn() == true )
+                { 
+                    yield return null;
+                }
+
+                yield return waitForKeyPress(KeyCode.Mouse0);
+
+                Debug.Log("You scumbag");
+
+                answer1.didthisreturn = false;
+                answer2.didthisreturn = false;
+                answer3.didthisreturn = false;
+                answer4.didthisreturn = false;
+
+                option1.text = "";
+                option2.text = "";
+                option3.text = "";
+                option4.text = "";
+
+            //if (optionone.didReturn() == true)
+
             }
 
-            yield return waitForKeyPress(KeyCode.Mouse0);
+            else yield return waitForKeyPress(KeyCode.Mouse0);
 
             i++;
         }
