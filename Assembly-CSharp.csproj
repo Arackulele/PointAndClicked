@@ -39,8 +39,9 @@
      <Compile Include="Assets/DialogueManager.cs" />
      <Compile Include="Assets/DialogueTestChar1.cs" />
      <Compile Include="Assets/OpenInv.cs" />
-     <Compile Include="Assets/Char.cs" />
+     <Compile Include="Assets/Character.cs" />
      <Compile Include="Assets/Dialogue.cs" />
+     <Compile Include="Assets/UIMoney.cs" />
      <Compile Include="Assets/Answer.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
