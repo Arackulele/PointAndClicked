@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using static Dialogue;
+using static Character;
 
 
 public class DialogueManager : MonoBehaviour
 {
-    public string[] texts;
-    public bool[] question;
-    public int[] answers;
-    public string[][] answershere;
+
     public GameObject otherSpeaker;
 
     public GameObject optionone;
@@ -26,10 +24,17 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI option3;
     public TextMeshProUGUI option4;
 
+    public GameObject chara;
+    public Character charascript;
+
+
     Answer answer1;
     Answer answer2;
     Answer answer3;
     Answer answer4;
+
+    public int increment;
+    public int playeranswer;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +42,6 @@ public class DialogueManager : MonoBehaviour
 
         setup();
 
-        addText("No text was found for this Character, this is either because of an error or i just havent implemented it yet");
 
 
 
@@ -47,19 +51,8 @@ public class DialogueManager : MonoBehaviour
     public void setup()
     {
 
-        texts = new string[99];
-        question = new bool[99];
-        answers = new int[99];
-        answershere = new string[99][];
-
-
-        for (int i = 0; i < texts.Length; i++)
-        {
-            texts[i] = "stop";
-            question[i] = false;
-            answers[i] = 0;
-            answershere[i] = new string[4] { "No_Text", "No_Text", "No_Text", "No_Text" };
-        }
+        chara = GameObject.Find("Character");
+        charascript = chara.GetComponent<Character>();
 
 
         otherSpeaker = GameObject.Find("DialogueTree2");
@@ -88,108 +81,141 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    public IEnumerator ReadTextEasy(string Text, bool autocontinue)
+    {
+
+        if (increment % 2 != 0)
+        {
+
+            Debug.Log("playing text");
+
+            yield return PlayText(Text, dialogueOther);
+
+        }
+        else
+        {
+            Debug.Log("playing text");
+            yield return PlayText(Text, dialogue);
+
+        }
+
+        increment++;
+
+        if (autocontinue == false) yield return waitForKeyPress(KeyCode.Mouse0);
+
+        yield break;
+
+    }
+
+    public IEnumerator ReadText(string Text, bool autocontinue, int chartoread)
+    {
+
+        if (chartoread == 2)
+        {
+
+            Debug.Log("playing text");
+
+            yield return PlayText(Text, dialogueOther);
+
+        }
+        else
+        {
+            Debug.Log("playing text");
+            yield return PlayText(Text, dialogue);
+
+        }
+
+        increment++;
+
+        if (autocontinue == false) yield return waitForKeyPress(KeyCode.Mouse0);
+
+        yield break;
+
+    }
+
+    public IEnumerator ReadQuestion(string TextToAdd, int answeramount, string answertext1, string answertext2, string answertext3, string answertext4)
+    {
+
+        yield return ReadTextEasy(TextToAdd, true);
+
+        Debug.Log("question");
+
+        optionone.SetActive(true);
+        option1.text = answertext1;
+
+        answer1 = optionone.GetComponent<Answer>();
+        answer2 = optiontwo.GetComponent<Answer>();
+        answer3 = optionthree.GetComponent<Answer>();
+        answer4 = optionfour.GetComponent<Answer>();
+
+        if (answeramount > 1)
+        {
+            optiontwo.SetActive(true);
+            option2.text = answertext2;
+
+
+        }
+
+        if (answeramount > 2)
+        {
+            optionthree.SetActive(true);
+            option3.text = answertext3;
+
+        }
+
+        if (answeramount > 3)
+        {
+            optionfour.SetActive(true);
+            option4.text = answertext4;
+
+        }
+
+
+
+        while (answer1.didReturn() == false && answer2.didReturn() == false && answer3.didReturn() == false && answer4.didReturn() == false)
+        {
+            yield return null;
+            Debug.Log("In Loop");
+        }
+
+        if (answer1.didReturn()) playeranswer = 1;
+
+        if (answer2.didReturn()) playeranswer = 2;
+
+        if (answer3.didReturn()) playeranswer = 3;
+
+        if (answer4.didReturn()) playeranswer = 4;
+
+        Debug.Log("You scumbag");
+
+
+        answer1.didthisreturn = false;
+        answer2.didthisreturn = false;
+        answer3.didthisreturn = false;
+        answer4.didthisreturn = false;
+
+        option1.text = "";
+        option2.text = "";
+        option3.text = "";
+        option4.text = "";
+
+        yield break;
+
+    }
+
     public IEnumerator TextStart()
     {
 
         yield return new WaitForSeconds(0.5f);
 
-        int i = 0;
+        yield return ReadText("Test Text", false, 1);
 
-        Debug.Log(i);
+        yield return  ReadText("\nTest Text", false, 2);
 
-        while (texts[i] != "stop")
-        {
-            if (i % 2 != 0)
-            {
+        yield return ReadText("\nTest Text", false, 1);
 
-                Debug.Log("playing text");
+        Debug.Log(increment);
 
-                yield return PlayText(texts[i], dialogueOther);
-
-            }
-            else
-            {
-                Debug.Log("playing text");
-                yield return PlayText(texts[i], dialogue);
-
-            }
-
-            if (question[i] == true)
-            {
-                
-
-                Debug.Log("question");
-
-                optionone.SetActive(true);
-                option1.text = answershere[i][0];
-
-                answer1 = optionone.GetComponent<Answer>();
-                answer2 = optiontwo.GetComponent<Answer>();
-                answer3 = optionthree.GetComponent<Answer>();
-                answer4 = optionfour.GetComponent<Answer>();
-
-                if (answers[i] > 1)
-                {
-                    optiontwo.SetActive(true);
-                    option2.text = answershere[i][1];
-
-                }
-
-                if (answers[i] > 2)
-                {
-                    optionthree.SetActive(true);
-                    option3.text = answershere[i][2];
-
-                }
-
-                if (answers[i] > 3)
-                {
-                    optionfour.SetActive(true);
-                    option4.text = answershere[i][3];
-
-                }
-
-
-
-                while (answer1.didReturn() == false && answer2.didReturn() == false && answer3.didReturn() == false && answer4.didReturn() == false )
-                { 
-                    yield return null;
-                    Debug.Log("In Loop");
-                }
-
-
-
-                Debug.Log("You scumbag");
-
-
-                answer1.didthisreturn = false;
-                answer2.didthisreturn = false;
-                answer3.didthisreturn = false;
-                answer4.didthisreturn = false;
-
-                option1.text = "";
-                option2.text = "";
-                option3.text = "";
-                option4.text = "";
-
-               
-            //dialogue stream logic here
-            
-            //if (optionone.didReturn() == true)
-
-            }
-       
-
-            else yield return waitForKeyPress(KeyCode.Mouse0);
-            
-            i++;
-        }
-
-
-        // yield return PlayText(text1, dialogue);
-        // yield return new WaitForSeconds(2f);
-        // yield return waitForKeyPress(KeyCode.Space);
-        // yield return PlayText(text2, dialogueOther);
 
     }
 
@@ -217,46 +243,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void addText(string TextToAdd)
-    {
-
-        int i = 0;
-
-        while (texts[i] != "stop")
-        {
-            i++;
-            Debug.Log("Skipped");
-        }
-
-        texts[i] = TextToAdd;
-
-        Debug.Log("Added " + TextToAdd);
-    }
-
-    public void addQuestion(string TextToAdd, int answeramount, string answer1, string answer2, string answer3, string answer4)
-    {
-
-        int i = 0;
-
-        while (texts[i] != "stop")
-        {
-            i++;
-            Debug.Log("Skipped");
-        }
-
-        texts[i] = TextToAdd;
-
-        question[i] = true;
-
-        if (answeramount != 0) answers[i] = answeramount;
 
 
-        answershere[i] = new string[4] { answer1, answer2, answer3, answer4 };
-
-
-
-
-        Debug.Log("Added " + TextToAdd);
-    }
 }
 

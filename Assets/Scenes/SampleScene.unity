@@ -2348,7 +2348,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1351817713}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
         m_MethodName: StopAllCoroutines
         m_Mode: 1
@@ -3167,9 +3167,9 @@ GameObject:
   - component: {fileID: 1351817710}
   - component: {fileID: 1351817712}
   - component: {fileID: 1351817711}
-  - component: {fileID: 1351817713}
-  - component: {fileID: 1351817714}
   - component: {fileID: 1351817715}
+  - component: {fileID: 1351817716}
+  - component: {fileID: 1351817714}
   m_Layer: 5
   m_Name: DialogueTree
   m_TagString: Untagged
@@ -3295,32 +3295,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351817709}
   m_CullTransparentMesh: 1
---- !u!114 &1351817713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351817709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fea6ac15d0369bfa96bde166ddf899b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  texts: []
-  question: 
-  answers: 
-  otherSpeaker: {fileID: 0}
-  optionone: {fileID: 0}
-  optiontwo: {fileID: 0}
-  optionthree: {fileID: 0}
-  optionfour: {fileID: 0}
-  dialogue: {fileID: 0}
-  dialogueOther: {fileID: 0}
-  option1: {fileID: 0}
-  option2: {fileID: 0}
-  option3: {fileID: 0}
-  option4: {fileID: 0}
 --- !u!114 &1351817714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3333,9 +3307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d1cb1b56b6ea0b481ab99f348265b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texts: []
-  question: 
-  answers: 
   otherSpeaker: {fileID: 0}
   optionone: {fileID: 0}
   optiontwo: {fileID: 0}
@@ -3347,6 +3318,10 @@ MonoBehaviour:
   option2: {fileID: 0}
   option3: {fileID: 0}
   option4: {fileID: 0}
+  chara: {fileID: 0}
+  charascript: {fileID: 0}
+  increment: 0
+  playeranswer: 0
 --- !u!114 &1351817715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3361,6 +3336,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &1351817716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351817709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e062844be7a6f7c4d95e5fdf94f5276f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherSpeaker: {fileID: 0}
+  optionone: {fileID: 0}
+  optiontwo: {fileID: 0}
+  optionthree: {fileID: 0}
+  optionfour: {fileID: 0}
+  dialogue: {fileID: 0}
+  dialogueOther: {fileID: 0}
+  option1: {fileID: 0}
+  option2: {fileID: 0}
+  option3: {fileID: 0}
+  option4: {fileID: 0}
+  chara: {fileID: 0}
+  charascript: {fileID: 0}
+  increment: 0
+  playeranswer: 0
 --- !u!1 &1438541334
 GameObject:
   m_ObjectHideFlags: 0
@@ -3776,9 +3778,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1561422661}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
-        m_MethodName: call
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
