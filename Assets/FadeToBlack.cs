@@ -15,7 +15,7 @@ public class FadeToBlack : MonoBehaviour
     {
         Street1 = GameObject.Find("Street1");
         Street2 = GameObject.Find("Street2Placeholder");
-        Blackout = GameObject.Find("Blackout");
+        Blackout = GameObject.Find("Fadeout");
         blackScreen = Blackout.GetComponent<Image>();
     }
 
