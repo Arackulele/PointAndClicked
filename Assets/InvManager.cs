@@ -18,12 +18,21 @@ public class InvManager : MonoBehaviour
             inventory[i] = new Item {name = "none"};
             Debug.Log("Name of items in array:" + inventory[i].name);
         }
+        StartCoroutine(HideInvForLoading());
+    }
+
+    public IEnumerator HideInvForLoading()
+    {
+
+        yield return new WaitForSeconds(0.1f);
         GameObject.Find("Inv").GetComponent<Image>().enabled = true;
         GameObject.Find("Inv").SetActive(false);
 
+
+
     }
 
-    void Update() {
+        void Update() {
         for(int i = 0; i < slots.Length; i++){
             if(inventory[i].name != "none"){
                 slots[i].GetComponent<Image>().enabled = true;
