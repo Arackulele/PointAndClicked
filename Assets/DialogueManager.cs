@@ -210,7 +210,7 @@ public class DialogueManager : MonoBehaviour
 
         yield return ReadText("Test Text", false, 1);
 
-        yield return  ReadText("\nTest Text", false, 2);
+        yield return  ReadText("\n<color=\"red\">Test Text</color>", false, 2);
 
         yield return ReadText("\nTest Text", false, 1);
 
@@ -231,10 +231,9 @@ public class DialogueManager : MonoBehaviour
 
 
             if (c == '<') { skip = true; }
-            else if(c == '<') { skip = true; }
             else if (c == '>') { skip = false; }
 
-            if (c == '.') yield return new WaitForSeconds(0.3f);
+            if (c == '.' || c == '?' || c == '!') yield return new WaitForSeconds(0.3f);
             else if(c == ',') yield return new WaitForSeconds(0.15f);
             else if(c == '%') yield return new WaitForSeconds(1f);
             else if (skip == false ) yield return new WaitForSeconds(0.075f);

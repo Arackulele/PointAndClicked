@@ -61,32 +61,34 @@ public class DialogueTestChar1 : DialogueManager
 
         yield return new WaitForSeconds(0.5f);
 
-        yield return ReadTextEasy("Hello,% balled", false);
+        yield return ReadTextEasy("hi, how are you on this fine day?", false);
 
-        yield return ReadQuestion("\nHow do you feel about <color=\"red\">minorities</color>.", 3, "I love them", "I hate them", "Run away", null);
+        yield return ReadQuestion("\n\nIm doing fine, how are you?", 3, "Im fine.", "Uhh...what?", "'Is he?'", null);
 
         if (playeranswer == 1)
         {
 
-            yield return ReadText("\nPhew, i thought you hated them, have some money for your great opinions", false, 2);
+            yield return ReadText("\nVery nice, i have to go now, though.", false, 2);
 
-            charascript.money += 0.10f;
+            //charascript.money += 0.10f;
 
         }
         else if (playeranswer == 2)
         {
 
-            yield return ReadText("\nFuck you, bitchass", false, 2);
+            yield return ReadText("\nI asked you how you are doing.", false, 2);
 
         }
         else if (playeranswer == 3)
         {
 
-            yield return ReadText("\nWhered you go", false, 2);
+            yield return ReadText("\n\n\n<color=#0C1833>He is looking scared, he hasnt met you before, has he?</color>", false, 1);
+            yield return ReadText("\n\nOh, i havent introduced myself yet, im [i havent come up with a name yet]. Im doing ok, thanks for asking.", false, 1);
 
+            yield return ReadText("\n\n\n\n\n\n\n\n\n\nAh,i havent seen you here before, i'm just a bit weary of people after the robbery that happened the other day.", false, 2);
+
+            yield return ReadText("\n\n\n\n\n\n<color=\"white\">+1 Empathy</color>\n<color=#19479E>You noticed his suspicion.</color>", false, 1);
         }
-
-        yield return ReadText("\nTest Text for formatting\nTest Text for formatting\nTest Text for formatting\nTest Text for formatting\nTest Text for formatting\nTest Text for formatting\nTest Text for formatting", false, 2);
 
         increment = 0;
 
