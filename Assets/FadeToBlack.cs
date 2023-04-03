@@ -9,12 +9,17 @@ public class FadeToBlack : MonoBehaviour
     public GameObject Street1;
     public GameObject Street2;
     public Image blackScreen;
-    public float fadeToBlackDuration = 0.1f;
+    public float fadeToBlackDuration = 0.2f;
+
+    public string ScreenFadeFrom;
+
+    public string ScreenFadeTo;
+
 
     void Start()
     {
-        Street1 = GameObject.Find("Street1");
-        Street2 = GameObject.Find("Street2Placeholder");
+        Street1 = GameObject.Find(ScreenFadeFrom);
+        Street2 = GameObject.Find(ScreenFadeTo);
         Blackout = GameObject.Find("Fadeout");
         blackScreen = Blackout.GetComponent<Image>();
     }
@@ -25,14 +30,14 @@ public class FadeToBlack : MonoBehaviour
         blackScreen.enabled = true;
         blackScreen.color = Color.black;
         blackScreen.canvasRenderer.SetAlpha(0.0f);
-        blackScreen.CrossFadeAlpha(60.0f, fadeToBlackDuration, false);
+        blackScreen.CrossFadeAlpha(1.0f, fadeToBlackDuration, false);
     }
     public void FadeFromBlack()
     {
         blackScreen.color = Color.black;
         blackScreen.enabled = false;
         blackScreen.canvasRenderer.SetAlpha(1.0f);
-        blackScreen.CrossFadeAlpha(60.0f, fadeToBlackDuration, false);
+        blackScreen.CrossFadeAlpha(1.0f, fadeToBlackDuration, false);
     }
 
     public void callfade() { StartCoroutine(FadeSequence()); }
@@ -42,10 +47,10 @@ public class FadeToBlack : MonoBehaviour
         public IEnumerator FadeSequence()
     {
         BlackFade();
-        yield return new WaitForSeconds(0.2f);
-        Street1.SetActive(false);
-        //Street2.SetActive(true);
+        yield return new WaitForSeconds(0.4f);
+        Street2.SetActive(true);
         FadeFromBlack();
+        Street1.SetActive(false);
 
     }
 }

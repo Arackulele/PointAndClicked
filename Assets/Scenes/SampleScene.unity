@@ -2635,35 +2635,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1daa5a834babeca49aad070cc502314b, type: 2}
   whiteNoiseFrequency: 0
-  whiteNoiseLength: 0.1
-  screenJumpFrequency: 1
-  screenJumpLength: 0.2
+  whiteNoiseLength: 100
+  screenJumpFrequency: 0
+  screenJumpLength: 0.3
   screenJumpMinLevel: 0.1
   screenJumpMaxLevel: 0.9
-  flickeringStrength: 0.002
-  flickeringCycle: 111
-  isSlippage: 1
-  isSlippageNoise: 1
-  slippageStrength: 0.002
-  slippageInterval: 2
-  slippageScrollSpeed: 44
-  slippageSize: 11
-  chromaticAberrationStrength: 0.003
+  flickeringStrength: 0.003
+  flickeringCycle: 11
+  isSlippage: 0
+  isSlippageNoise: 0
+  slippageStrength: 0.0002
+  slippageInterval: 1
+  slippageScrollSpeed: 5
+  slippageSize: 4
+  chromaticAberrationStrength: 0.001
   isChromaticAberration: 1
   isMultipleGhost: 1
-  multipleGhostStrength: 0.008
+  multipleGhostStrength: 0.004
   isScanline: 1
   isMonochrome: 0
   isLetterBox: 0
   isLetterBoxEdgeBlur: 0
-  letterBoxType: 1
+  letterBoxType: 0
   isFilmDirt: 0
-  filmDirtTex: {fileID: 0}
+  filmDirtTex: {fileID: 2800000, guid: dfc10e8aa69758649ba9ba34b1cbaaeb, type: 3}
   isDecalTex: 0
-  decalTex: {fileID: 0}
-  decalTexPos: {x: 0, y: 0}
-  decalTexScale: {x: 0, y: 0}
-  isLowResolution: 1
+  decalTex: {fileID: 2800000, guid: dfc10e8aa69758649ba9ba34b1cbaaeb, type: 3}
+  decalTexPos: {x: 100, y: 0}
+  decalTexScale: {x: 0.1, y: 0.1}
+  isLowResolution: 0
   resolutions: {x: 0, y: 0}
 --- !u!114 &519420034
 MonoBehaviour:
@@ -2677,22 +2677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc06e8dc06d6fbf588717ed104d90bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shader: {fileID: 4800000, guid: 31a06820e43b6f6af8dae83832a7cebb, type: 3}
-  bend: 4
-  scanlineSize1: 200
-  scanlineSpeed1: -10
-  scanlineSize2: 20
-  scanlineSpeed2: -3
-  scanlineAmount: 0.05
-  vignetteSize: 1.9
-  vignetteSmoothness: 0.6
-  vignetteEdgeRound: 8
-  noiseSize: 75
-  noiseAmount: 0.05
-  redOffset: {x: 0, y: -0.01}
-  blueOffset: {x: 0, y: 0}
-  greenOffset: {x: 0, y: 0.01}
-  material: {fileID: 0}
 --- !u!1 &521772867
 GameObject:
   m_ObjectHideFlags: 0
@@ -7852,6 +7836,8 @@ MonoBehaviour:
   Street2: {fileID: 0}
   blackScreen: {fileID: 0}
   fadeToBlackDuration: 5
+  ScreenFadeFrom: 
+  ScreenFadeTo: 
 --- !u!114 &1593444141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8496,7 +8482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1779409191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10058,6 +10044,7 @@ GameObject:
   - component: {fileID: 2135894044}
   - component: {fileID: 2135894043}
   - component: {fileID: 2135894042}
+  - component: {fileID: 2135894045}
   m_Layer: 5
   m_Name: MovementRight
   m_TagString: Untagged
@@ -10129,7 +10116,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1593444140}
+      - m_Target: {fileID: 2135894045}
         m_TargetAssemblyTypeName: FadeToBlack, Assembly-CSharp
         m_MethodName: callfade
         m_Mode: 1
@@ -10140,18 +10127,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1779409190}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2135894043
 MonoBehaviour:
@@ -10191,6 +10166,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135894040}
   m_CullTransparentMesh: 1
+--- !u!114 &2135894045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135894040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00e91f7c2aaf104780f98590ab6c187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Blackout: {fileID: 1593444138}
+  Street1: {fileID: 0}
+  Street2: {fileID: 0}
+  blackScreen: {fileID: 0}
+  fadeToBlackDuration: 0.1
+  ScreenFadeFrom: Street1
+  ScreenFadeTo: Street2Placeholder
 --- !u!1 &2147195230
 GameObject:
   m_ObjectHideFlags: 0
