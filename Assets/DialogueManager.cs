@@ -138,7 +138,7 @@ public class DialogueManager : MonoBehaviour
 
         yield return ReadTextEasy(TextToAdd, true);
 
-        Debug.Log("question");
+        Debug.Log("");
 
         optionone.SetActive(true);
         option1.text = answertext1;
