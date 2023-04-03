@@ -10,7 +10,8 @@ public class Item : Object
     public string description;
     public string name;
 
-    void createItem(){
+    void createItem(string name, string desc){
+
 
     }
     

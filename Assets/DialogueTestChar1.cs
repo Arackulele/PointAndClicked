@@ -61,7 +61,7 @@ public class DialogueTestChar1 : DialogueManager
 
         yield return new WaitForSeconds(0.5f);
 
-        yield return ReadTextEasy("Big% balled", false);
+        yield return ReadTextEasy("Hello,% balled", false);
 
         yield return ReadQuestion("\nHow do you feel about <color=\"red\">minorities</color>.", 3, "I love them", "I hate them", "Run away", null);
 
@@ -85,6 +85,8 @@ public class DialogueTestChar1 : DialogueManager
             yield return ReadText("\nWhered you go", false, 2);
 
         }
+
+        yield return ReadText("\nTest Text for formatting\nTest Text for formatting\nTest Text for formatting\nTest Text for formatting\nTest Text for formatting\nTest Text for formatting\nTest Text for formatting", false, 2);
 
         increment = 0;
 
