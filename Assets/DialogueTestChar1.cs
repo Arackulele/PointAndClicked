@@ -9,10 +9,14 @@ using static Dialogue;
  
 Dialogue Params:
 
-addText
+ReadText
 Param 1: String, Text you want to add next
 Param 2: Bool, Should the player have to click before the next Text Plays
 Param 3: Int, which Character should read this Text
+
+ReadTextEasy ( Same as read text but it automatically switches between Characters )
+Param 1: String, Text you want to add next
+Param 2: Bool, Should the player have to click before the next Text Plays
 
 addQuestion
 Param 1:String, Text you want said before Question pops up
@@ -21,6 +25,15 @@ Param 3:String, Answer 1 ( Needs to be added )
 Param 4:String, Answer 2 ( Optional, null out if not an answer )
 Param 5:String, Answer 3 ( Optional, null out if not an answer )
 Param 6:String, Answer 4 ( Optional, null out if not an answer )
+
+
+
+In any Text:
+
+Tags are supported
+Text waits longer after ,
+Text waits even longer after .
+Text makes a 1 second pause after %, the character also doesnt get read
 
  */
 
@@ -48,9 +61,9 @@ public class DialogueTestChar1 : DialogueManager
 
         yield return new WaitForSeconds(0.5f);
 
-        yield return ReadTextEasy("Big balled", false);
+        yield return ReadTextEasy("Big% balled", false);
 
-        yield return ReadQuestion("\nHow do you feel about minorities", 3, "I love them", "I hate them", "Run away", null);
+        yield return ReadQuestion("\nHow do you feel about <color=\"red\">minorities</color>.", 3, "I love them", "I hate them", "Run away", null);
 
         if (playeranswer == 1)
         {

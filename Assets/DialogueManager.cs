@@ -221,10 +221,23 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator PlayText(string TextToPlay, TextMeshProUGUI speaker)
     {
+
+        bool skip = false;
         foreach (char c in TextToPlay)
         {
-            speaker.text += c;
-            yield return new WaitForSeconds(0.075f);
+
+            if (c != '%') speaker.text += c;
+
+
+
+            if (c == '<') { skip = true; }
+            else if(c == '<') { skip = true; }
+            else if (c == '>') { skip = false; }
+
+            if (c == '.') yield return new WaitForSeconds(0.3f);
+            else if(c == ',') yield return new WaitForSeconds(0.15f);
+            else if(c == '%') yield return new WaitForSeconds(1f);
+            else if (skip == false ) yield return new WaitForSeconds(0.075f);
         }
     }
 
