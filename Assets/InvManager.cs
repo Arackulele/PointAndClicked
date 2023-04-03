@@ -18,6 +18,9 @@ public class InvManager : MonoBehaviour
             inventory[i] = new Item {name = "none"};
             Debug.Log("Name of items in array:" + inventory[i].name);
         }
+        GameObject.Find("Inv").GetComponent<Image>().enabled = true;
+        GameObject.Find("Inv").SetActive(false);
+
     }
 
     void Update() {

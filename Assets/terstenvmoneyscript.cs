@@ -8,16 +8,19 @@ using static InvManager;
 
 public class terstenvmoneyscript : MonoBehaviour
 {
-    GameObject Index = GameObject.Find("ItemIndexLoader");
+    public GameObject Manager;
     Item Note;
+
     void Start()
     {
-       Note = new Item {name = "Torn Note", description = "A torn up Note, you can still read some of the writing.", sprite = Index.GetComponent<ItemIndex>().TornNoteSprite, itemClass = "default"};
+        GameObject Index = GameObject.Find("ItemIndexLoader");
+        Manager = GameObject.Find("Inv");
+        Note = new Item {name = "Torn Note", description = "A torn up Note, you can still read some of the writing.", sprite = Index.GetComponent<ItemIndex>().TornNoteSprite, itemClass = "default"};
     }
 
     // Update is called once per frame
-    void ClickBehavior()
+    public void ClickBehavior()
     {
-        InvManager.addItem( Note );
+        Manager.GetComponent<InvManager>().addItem( Note );
     }
 }

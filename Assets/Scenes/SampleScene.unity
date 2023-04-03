@@ -3484,6 +3484,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1798101752}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &725320563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5823,7 +5835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1257202243
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5856,7 +5868,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257202242}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -9179,6 +9191,7 @@ GameObject:
   - component: {fileID: 1966801788}
   - component: {fileID: 1966801787}
   - component: {fileID: 1966801786}
+  - component: {fileID: 1966801789}
   m_Layer: 5
   m_Name: testenvironmentobj
   m_TagString: Untagged
@@ -9275,13 +9288,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1257202247}
-        m_TargetAssemblyTypeName: InvManager, Assembly-CSharp
-        m_MethodName: addItem
-        m_Mode: 2
+      - m_Target: {fileID: 1966801789}
+        m_TargetAssemblyTypeName: terstenvmoneyscript, Assembly-CSharp
+        m_MethodName: ClickBehavior
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9325,6 +9338,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966801784}
   m_CullTransparentMesh: 1
+--- !u!114 &1966801789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966801784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ebf25f6b3b9b27784322d2937195e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Manager: {fileID: 1257202242}
 --- !u!1 &1995823773
 GameObject:
   m_ObjectHideFlags: 0
