@@ -58,12 +58,12 @@ public class SetSkills : MonoBehaviour
     {
 
         Mark.text = "Marksmanship\n    " + charascript.Marksmanship;
-        Intim.text = "Marksmanship\n    " + charascript.Intimidation;
-        Strngth.text = "Marksmanship\n    " + charascript.Strength;
+        Intim.text = "Intimidation\n    " + charascript.Intimidation;
+        Strngth.text = "Strength\n    " + charascript.Strength;
 
-        Mech.text = "Mehanical\n    " + charascript.Mechanical;
+        Mech.text = "Mechanical\n    " + charascript.Mechanical;
         Speed.text = "Reac. Speed\n    " + charascript.ReactionSpeed;
-        Coord.text = "Coorination\n    " + charascript.Coordination;
+        Coord.text = "Coordination\n    " + charascript.Coordination;
 
         Econ.text = "Economical\n    " + charascript.economical;
         Theo.text = "Theoretical\n    " + charascript.theoretical;

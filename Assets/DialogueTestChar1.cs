@@ -86,7 +86,7 @@ public class DialogueTestChar1 : DialogueManager
             yield return ReadText("\n\nOh, i havent introduced myself yet, im [i havent come up with a name yet]. Im doing ok, thanks for asking.", false, 1);
 
             yield return ReadText("\n\n\n\n\n\n\n\n\n\nAh,i havent seen you here before, i'm just a bit weary of people after the robbery that happened the other day.", false, 2);
-
+            charascript.empathy++;
             yield return ReadText("\n\n\n\n\n\n<color=\"white\">+1 Empathy</color>\n<color=#19479E>You noticed his suspicion.</color>", false, 1);
         }
 
