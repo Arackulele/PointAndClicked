@@ -43,4 +43,8 @@ public class InvManager : MonoBehaviour
             }
         }
     }
+
+    public void removeItem(int Slot){
+        inventory[Slot] = new Item {name = "none"};
+    }
 }

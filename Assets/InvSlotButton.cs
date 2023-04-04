@@ -14,8 +14,10 @@ public class InvSlotButton : MonoBehaviour
     TextMeshProUGUI puDesc;
     GameObject puInspect;
     GameObject puDiscard;
+    GameObject chat;
 
     void Start() {
+
 
         invPopUp = GameObject.Find("InvPopUp");
         puTitle = GameObject.Find("PUTitle").GetComponent<TextMeshProUGUI>();
@@ -43,6 +45,7 @@ public class InvSlotButton : MonoBehaviour
         if(Manager.inventory[slotNum].name!= "none"){
             puTitle.text = Manager.inventory[slotNum].name;
             puDesc.text = Manager.inventory[slotNum].description;
+            puDiscard.GetComponent<DiscardButton>().slot = slotNum;
             invPopUp.SetActive(true);
         }
     }

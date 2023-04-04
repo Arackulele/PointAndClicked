@@ -37,6 +37,10 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/DialogueTestChar1.cs" />
+     <Compile Include="Assets/StartGameCleanup.cs" />
+     <Compile Include="Assets/UiTime.cs" />
+     <Compile Include="Assets/UiDate.cs" />
+     <Compile Include="Assets/SetSkills.cs" />
      <Compile Include="Assets/InvManager.cs" />
      <Compile Include="Assets/terstenvmoneyscript.cs" />
      <Compile Include="Assets/Item.cs" />
