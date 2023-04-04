@@ -11,7 +11,7 @@ public class InvSlotButton : MonoBehaviour
     int slotNum;
     GameObject invPopUp;
     TextMeshProUGUI puTitle;
-    TextMeshProUGUI puDesc ;
+    TextMeshProUGUI puDesc;
     GameObject puInspect;
     GameObject puDiscard;
 
