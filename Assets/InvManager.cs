@@ -25,6 +25,7 @@ public class InvManager : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0.05f);
+        GameObject.Find("InvPopUp").SetActive(false);
         GameObject.Find("Street2Placeholder").SetActive(false);
         GameObject.Find("Inv").GetComponent<Image>().enabled = true;
         GameObject.Find("Inv").SetActive(false);
