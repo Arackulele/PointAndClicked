@@ -236,7 +236,7 @@ public class DialogueManager : MonoBehaviour
             if (c == '.' || c == '?' || c == '!') yield return new WaitForSeconds(0.3f);
             else if(c == ',') yield return new WaitForSeconds(0.15f);
             else if(c == '%') yield return new WaitForSeconds(1f);
-            else if (skip == false ) yield return new WaitForSeconds(0.075f);
+            else if (skip == false ) yield return new WaitForSeconds(0.05f);
         }
     }
 
