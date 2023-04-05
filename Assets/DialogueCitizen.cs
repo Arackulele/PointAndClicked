@@ -261,9 +261,9 @@ public class DialogueCitizen : DialogueManager
             if (playeranswer == 3)
             {
                 //p
-                yield return ReadTextEasy("\n\nI don't believe you. You're acting suspicious.", false);
+                yield return ReadTextEasy("\n\n\n\nI don't believe you. You're acting suspicious.", false);
                 //o
-                yield return ReadTextEasy("\n\nLucky yer saying this to men, point yer fingers at anybody else and you might not have any left, if you're catching my drift.", false);
+                yield return ReadTextEasy("\n\n\nLucky yer saying this to men, point yer fingers at anybody else and you might not have any left, if you're catching my drift.", false);
 
                 //go back to start
 
