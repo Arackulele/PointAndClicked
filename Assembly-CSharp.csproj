@@ -55,8 +55,11 @@
      <Compile Include="Assets/Simple-CRT-Shader/Assets/SimpleCRTShader/Script/CRTPostEffecter.cs" />
      <Compile Include="Assets/UIMoney.cs" />
      <Compile Include="Assets/DiscardButton.cs" />
+     <Compile Include="Assets/ChatScript.cs" />
      <Compile Include="Assets/Answer.cs" />
      <Compile Include="Assets/InvSlotButton.cs" />
+     <Compile Include="Assets/assets/NewBehaviourScript.cs" />
+     <Compile Include="Assets/assets/TitleScreen/foregroundgrassmovement.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
