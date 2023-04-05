@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using static Dialogue;
 using static Character;
+using static ChatScript;
 
 
 public class DialogueManager : MonoBehaviour
@@ -16,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject optionthree;
     public GameObject optionfour;
 
+
     public TextMeshProUGUI dialogue;
     public TextMeshProUGUI dialogueOther;
 
@@ -26,6 +28,7 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject chara;
     public Character charascript;
+    public ChatScript chat;
 
 
     Answer answer1;
@@ -33,7 +36,6 @@ public class DialogueManager : MonoBehaviour
     Answer answer3;
     Answer answer4;
 
-    public int increment;
     public int playeranswer;
 
     // Start is called before the first frame update
@@ -53,6 +55,8 @@ public class DialogueManager : MonoBehaviour
 
         chara = GameObject.Find("Character");
         charascript = chara.GetComponent<Character>();
+
+        chat = GameObject.Find("chat").GetComponent<ChatScript>();
 
 
         otherSpeaker = GameObject.Find("DialogueTree2");
@@ -84,7 +88,7 @@ public class DialogueManager : MonoBehaviour
     public IEnumerator ReadTextEasy(string Text, bool autocontinue)
     {
 
-        if (increment % 2 != 0)
+        if (charascript.increment % 2 != 0)
         {
 
             Debug.Log("playing text");
@@ -99,7 +103,7 @@ public class DialogueManager : MonoBehaviour
 
         }
 
-        increment++;
+        charascript.increment++;
 
         if (autocontinue == false) yield return waitForKeyPress(KeyCode.Mouse0);
 
@@ -125,7 +129,7 @@ public class DialogueManager : MonoBehaviour
 
         }
 
-        increment++;
+        charascript.increment++;
 
         if (autocontinue == false) yield return waitForKeyPress(KeyCode.Mouse0);
 
@@ -214,7 +218,7 @@ public class DialogueManager : MonoBehaviour
 
         yield return ReadText("\nTest Text", false, 1);
 
-        Debug.Log(increment);
+        Debug.Log(charascript.increment);
 
 
     }

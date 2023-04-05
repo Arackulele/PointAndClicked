@@ -98,6 +98,10 @@ public class DialogueCitizen : DialogueManager
                     //o
                     yield return ReadTextEasy("\nI have to go now, bye.", false);
 
+                    yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+
+                    chat.closeChat();
+
                     //end convo here
                 }
 
@@ -115,6 +119,10 @@ public class DialogueCitizen : DialogueManager
                         //o
                         yield return ReadTextEasy("\nI have to go now, bye.", false);
 
+
+                        yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+
+                        chat.closeChat();
                         //end convo here
                     }
 
@@ -139,6 +147,10 @@ public class DialogueCitizen : DialogueManager
 
                         //quest unlock Tamara here
 
+                        yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+
+                        chat.closeChat();
+
                     }
 
                 }
@@ -148,22 +160,21 @@ public class DialogueCitizen : DialogueManager
                     //p
                     yield return ReadTextEasy("\n\nNo, sorry. That's all I saw. Good luck with your investigation.", false);
 
+
+                    yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+
+                    chat.closeChat();
                     //end convo here
 
                 }
             }
-            if (playeranswer == 2)
-            {
-
-
-                //Unimplemented path
-
-            }
-
             if (playeranswer == 3)
             {
                 yield return ReadTextEasy("\n\nThanks for the tip, I'll go check it out.", false);
 
+                yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+
+                chat.closeChat();
                 //end convo here
             }
         }
@@ -190,6 +201,9 @@ public class DialogueCitizen : DialogueManager
                     //o
                     yield return ReadTextEasy("\n\nNo, now get out of ma sight!", false);
 
+                    yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+
+                    chat.closeChat();
                     //end convo
 
                 }
@@ -201,6 +215,9 @@ public class DialogueCitizen : DialogueManager
                     //o
                     yield return ReadTextEasy("\n\nI's fine, but get away now.", false);
 
+                    yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+
+                    chat.closeChat();
                     //end convo
 
                 }
@@ -212,6 +229,9 @@ public class DialogueCitizen : DialogueManager
                     //o
                     yield return ReadTextEasy("\n\nBye, i ain't got time for this shit.", false);
 
+                    yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+
+                    chat.closeChat();
                     //end convo
 
                 }
@@ -232,6 +252,9 @@ public class DialogueCitizen : DialogueManager
                     //p
                     yield return ReadTextEasy("\n\n\nAlright, I'll leave you alone.", false);
 
+                    yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+
+                    chat.closeChat();
                     //end convo
 
                 }
@@ -242,6 +265,9 @@ public class DialogueCitizen : DialogueManager
                     //p
                     yield return ReadTextEasy("\n\n\nSuit yourself.", false);
 
+                    yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+
+                    chat.closeChat();
                     //end convo
                 }
 
@@ -253,6 +279,9 @@ public class DialogueCitizen : DialogueManager
                     //p
                     yield return ReadTextEasy("\n\nI ain't here for an interrogation, go back to your friends from Berylit!", false);
 
+                    yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+
+                    chat.closeChat();
                     //end convo
                 }
 
@@ -292,11 +321,12 @@ public class DialogueCitizen : DialogueManager
             //o
             yield return ReadTextEasy("\n\n\nDo I know anyone from Berylit... Don't make me LAUGH! There's this fancy bloke downtown, name's Kalvin, he thinks he's SOO special for havin' luxury, tell ya what, if you get him locked up, I'll owe ya one hehe.", false);
 
+            yield return ReadText("\n\n\n\n\n\n\n<color=\"red\">------------</color>", false, 1);
+
+            chat.closeChat();
             //end of convo
         }
-        increment = 0;
 
-        Debug.Log(increment);
 
     }
 

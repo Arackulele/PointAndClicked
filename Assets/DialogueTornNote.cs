@@ -67,10 +67,6 @@ public class DialogueTornNote : DialogueManager
 
         yield return ReadText("\n\n\nThe rest of the Note is unintelligable", false, 2);
 
-        increment = 0;
-
-        Debug.Log(increment);
-
     }
 
 

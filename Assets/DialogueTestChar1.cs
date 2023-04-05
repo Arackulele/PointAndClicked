@@ -90,9 +90,6 @@ public class DialogueTestChar1 : DialogueManager
             yield return ReadText("\n\n\n\n\n\n<color=\"white\">+1 Empathy</color>\n<color=#19479E>You noticed his suspicion.</color>", false, 1);
         }
 
-        increment = 0;
-
-        Debug.Log(increment);
 
     }
 

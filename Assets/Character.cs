@@ -6,6 +6,8 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
 
+    public int increment = 0;
+
     // World stuff
     public float time = 08.00f;
     public int day = 1;
