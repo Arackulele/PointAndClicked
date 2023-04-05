@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class foregroundgrassmovement : MonoBehaviour
+public class mountain3 : MonoBehaviour
 {
     public bool move = true;
 
@@ -26,13 +26,13 @@ public class foregroundgrassmovement : MonoBehaviour
         {
 
             yield return new WaitForSeconds(0.0005f);
-            yield return gameObject.transform.position = new Vector3(gameObject.transform.position.x+0.01f, gameObject.transform.position.y, gameObject.transform.position.z);
+            yield return gameObject.transform.position = new Vector3(gameObject.transform.position.x+0.06f, gameObject.transform.position.y, gameObject.transform.position.z);
 
             
 
-            if(gameObject.transform.position.x >= 1100 / 1.921819f )
+            if(gameObject.transform.position.x >= 453 / 1.921819f )
             {
-                yield return gameObject.transform.position = new Vector3(-400 / 1.921819f , gameObject.transform.position.y, gameObject.transform.position.z);
+                yield return gameObject.transform.position = new Vector3(-821 / 1.921819f , gameObject.transform.position.y, gameObject.transform.position.z);
                 Debug.Log("moved pos");
             }
         }
