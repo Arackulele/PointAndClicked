@@ -73,12 +73,23 @@ public class DialogueCitizen : DialogueManager
             //o
             yield return ReadQuestion("\n\n\n\nJustice, ya say? Hmm, well, I'll tell ya what I know. I saw a shady character skulkin' around the alley the night of the murder. Might have been worth checkin' out.", 3, "Can you describe the person you saw?", "Did you get a look at their face?", "Thanks for the tip, I'll go check it out.", null);
 
-            if (playeranswer == 1)
+            if (playeranswer == 1 || playeranswer == 2)
             {
-                //p
-                yield return ReadTextEasy("\n\n\n\n\n\n\nCan you describe the person you saw?", false);
-                //o
+
+                if (playeranswer == 1)
+                {
+                    //p
+                    yield return ReadTextEasy("\n\n\n\n\n\n\nCan you describe the person you saw?", false);
+
+                }
+                else
+                {
+                    //p
+                    yield return ReadTextEasy("\n\n\n\n\n\n\nCan you describe the persons face?", false);
+                    //o
+                }
                 yield return ReadQuestion("\n\n\nHmm, let me think... They were wearin' a dark coat and a hat that covered their face. I couldn't really make out anythin' else.\r\n", 3, "Thanks, that's helpful.", "That's not very specific.", "Did you see anything else?", null);
+
 
                 if (playeranswer == 1)
                 {
@@ -172,58 +183,89 @@ public class DialogueCitizen : DialogueManager
                 //o
                 yield return ReadQuestion("\n\n\n\nHmph, well, you ain't gonna get much from me. I don't know nothin' about no murder.", 3, "Did you see anything?", "Alright, sorry to have bothered you.", "I'll be going then.", null);
 
+                if (playeranswer == 1)
+                {
+                    //p
+                    yield return ReadTextEasy("\n\n\n\nDid you see anything?", false);
+                    //o
+                    yield return ReadTextEasy("\n\nNo, now get out of ma sight!", false);
+
+                    //end convo
+
+                }
                 if (playeranswer == 2)
                 {
+
+                    //p
+                    yield return ReadTextEasy("\n\n\n\nAlright, sorry to have bothered you.", false);
+                    //o
+                    yield return ReadTextEasy("\n\nI's fine, but get away now.", false);
+
+                    //end convo
+
+                }
+                if (playeranswer == 3)
+                {
+
+                    //p
+                    yield return ReadTextEasy("\n\n\n\nI'll be going then.", false);
+                    //o
+                    yield return ReadTextEasy("\n\nBye, i ain't got time for this shit.", false);
 
                     //end convo
 
                 }
 
-                if (playeranswer == 3)
-                {
-                    //p
-                    yield return ReadTextEasy("\n\nI don't believe you. You're acting suspicious.", false);
-                    //o
-                    yield return ReadTextEasy("\n\nLucky yer saying this to men, point yer fingers at anybody else and you might not have any left, if you're catching my drift.", false);
-                    //go back to start
-                }
 
 
-                if (playeranswer == 1)
-                {
-
-                    //p
-                    yield return ReadTextEasy("\n\nI'm just asking questions.", false);
-                    //o
-                    yield return ReadQuestion("\n\nAlright, I'll leave you alone.", 3, "Suit yourself.", "Alright, sorry to have bothered you.", "You're not making this easy.", null);
-
-                    if (playeranswer == 1)
-                    {
-
-                        //end convo
-
-                    }
-
-                    if (playeranswer == 2)
-                    {
-
-                        //end convo
-
-                    }
-
-                    if (playeranswer == 3)
-                    {
-
-                        //ending words
-
-                    }
-
-
-                }
 
             }
             if (playeranswer == 2)
             {
+                //p
+                yield return ReadTextEasy("\n\nI'm just asking questions.", false);
+                //o
+                yield return ReadQuestion("\n\nWell, maybe you should ask someone else. I ain't got nothin' to say to the likes of you.", 3, "Alright, I'll leave you alone.", "Suit yourself.", "You're not making this easy.", null);
+
+                if (playeranswer == 1)
+                {
+                    //p
+                    yield return ReadTextEasy("\n\n\nAlright, I'll leave you alone.", false);
+
+                    //end convo
+
+                }
+
+                if (playeranswer == 2)
+                {
+
+                    //p
+                    yield return ReadTextEasy("\n\n\nSuit yourself.", false);
+
+                    //end convo
+                }
+
+                if (playeranswer == 3)
+                {
+                    //p
+                    yield return ReadTextEasy("\n\n\nYou're not making this easy.", false);
+
+                    //p
+                    yield return ReadTextEasy("\n\nI ain't here for an interrogation, go back to your friends from Berylit!", false);
+
+                    //end convo
+                }
+
+
+            }
+            if (playeranswer == 3)
+            {
+                //p
+                yield return ReadTextEasy("\n\nI don't believe you. You're acting suspicious.", false);
+                //o
+                yield return ReadTextEasy("\n\nLucky yer saying this to men, point yer fingers at anybody else and you might not have any left, if you're catching my drift.", false);
+
+                //go back to start
 
             }
 
