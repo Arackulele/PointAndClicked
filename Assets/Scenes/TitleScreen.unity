@@ -268,6 +268,8 @@ GameObject:
   - component: {fileID: 138475806}
   - component: {fileID: 138475805}
   - component: {fileID: 138475804}
+  - component: {fileID: 138475809}
+  - component: {fileID: 138475810}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -397,6 +399,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &138475809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138475803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b01e1a4ec83cd2418d78a1d868db5c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gammaCorrecter: {fileID: 4800000, guid: 39fcea10e5609a242b94c1f7917fbb43, type: 3}
+  gamma: 1.7
+--- !u!114 &138475810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138475803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c75a4f020211bab4a949b7ae5e7a4522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postProcessingShader: {fileID: 4800000, guid: 0904290dab5f2c441895915efa105e54, type: 3}
+  exposure: {x: 1, y: 1, z: 1}
+  temperature: 0
+  tint: 0
+  contrast: {x: 1.1, y: 1.1, z: 1.1}
+  linearMidPoint: {x: 0.5, y: 0.5, z: 0.5}
+  brightness: {x: 0, y: 0, z: 0}
+  colorFilter: {r: 1, g: 1, b: 1, a: 0}
+  saturation: {x: 1, y: 1, z: 1}
 --- !u!1 &242548709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2323,9 +2360,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Videogame
+  m_text: 'The Hushed Council/
 
-    Title'
+    The Truth in the Wicked'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bb1b4db93217164eac7e6ae8c99710b, type: 2}
   m_sharedMaterial: {fileID: -3533114025956500034, guid: 9bb1b4db93217164eac7e6ae8c99710b, type: 2}

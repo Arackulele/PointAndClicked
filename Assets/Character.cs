@@ -77,57 +77,57 @@ public class Character : MonoBehaviour
             default:
             case "Marksmanship":
                 Marksmanship++;
-                if (Random.Range(1, 4) == 1) stability--;
+                if (Random.Range(1, 4) == 1 && stability > 0) stability--;
                 break;
             case "Intimidation":
                 Intimidation++;
-                if (Random.Range(1, 4) == 1) empathy--;
+                if (Random.Range(1, 4) == 1 && empathy > 0) empathy--;
                 break;
             case "Strength":
                 Strength++;
-                if (Random.Range(1, 4) == 1) emotional--;
+                if (Random.Range(1, 4) == 1 && emotional > 0) emotional--;
                 break;
 
             //hand
             case "Mechanical":
                 Mechanical++;
-                if (Random.Range(1, 4) == 1) economical--;
+                if (Random.Range(1, 4) == 1 && economical > 0) economical--;
                 break;
             case "ReactionSpeed":
                 ReactionSpeed++;
-                if (Random.Range(1, 4) == 1) theoretical--;
+                if (Random.Range(1, 4) == 1 && theoretical > 0) theoretical--;
                 break;
             case "Coordination":
                 Coordination++;
-                if (Random.Range(1, 4) == 1) knowledge--;
+                if (Random.Range(1, 4) == 1 && stability > 0) knowledge--;
                 break;
 
             //think
             case "economical":
                 economical++;
-                if (Random.Range(1, 4) == 1) Mechanical--;
+                if (Random.Range(1, 4) == 1 && Mechanical > 0) Mechanical--;
                 break;
             case "theoretical":
                 theoretical++;
-                if (Random.Range(1, 4) == 1) ReactionSpeed--;
+                if (Random.Range(1, 4) == 1 && ReactionSpeed > 0) ReactionSpeed--;
                 break;
             case "knowledge":
                 knowledge++;
-                if (Random.Range(1, 4) == 1) Coordination--;
+                if (Random.Range(1, 4) == 1 && Coordination > 0) Coordination--;
                 break;
 
             //psych
             case "stability":
                 stability++;
-                if (Random.Range(1, 4) == 1) Marksmanship--;
+                if (Random.Range(1, 4) == 1 && Marksmanship > 0) Marksmanship--;
                 break;
             case "empathy":
                 empathy++;
-                if (Random.Range(1, 4) == 1) Intimidation--;
+                if (Random.Range(1, 4) == 1 && Intimidation > 0) Intimidation--;
                 break;
             case "emotional":
                 emotional++;
-                if (Random.Range(1, 4) == 1) Strength--;
+                if (Random.Range(1, 4) == 1 && Strength > 0) Strength--;
                 break;
 
         }

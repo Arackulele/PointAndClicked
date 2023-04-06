@@ -137,6 +137,95 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    public IEnumerator LevelInText(string SkillToLevel, string Flavour)
+    {
+
+        charascript.levelskills(SkillToLevel);
+
+        string compoundtext;
+
+        switch (SkillToLevel)
+        {
+            //phys
+            default:
+            case "Marksmanship":
+
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel  + "</color>\n<color=#A02B48>" + Flavour + "</color>";
+
+                break;
+            case "Intimidation":
+
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel + "</color>\n<color=#A02B48>" + Flavour + "</color>";
+
+                break;
+            case "Strength":
+
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel + "</color>\n<color=#A02B48>" + Flavour + "</color>";
+
+                break;
+
+            //hand
+            case "Mechanical":
+
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel + "</color>\n<color=#C47F31>" + Flavour + "</color>";
+
+                break;
+            case "ReactionSpeed":
+
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel + "</color>\n<color=#C47F31>" + Flavour + "</color>";
+
+                break;
+            case "Coordination":
+
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel + "</color>\n<color=#C47F31>" + Flavour + "</color>";
+
+                break;
+
+            //think
+            case "economical":
+
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel + "</color>\n<color=#5BC684>" + Flavour + "</color>";
+
+                break;
+            case "theoretical":
+
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel + "</color>\n<color=#5BC684>" + Flavour + "</color>";
+
+                break;
+            case "knowledge":
+
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel + "</color>\n<color=#5BC684>" + Flavour + "</color>";
+
+                break;
+
+            //psych
+            case "stability":
+
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel + "</color>\n<color=#19479E>" + Flavour + "</color>";
+
+                break;
+            case "empathy":
+
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel + "</color>\n<color=#19479E>" + Flavour + "</color>";
+
+                break;
+            case "emotional":
+
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel + "</color>\n<color=#19479E>" + Flavour + "</color>";
+
+                break;
+
+        }
+
+        yield return ReadText(compoundtext, false, 1);
+
+
+        charascript.increment--;
+
+        yield break;
+
+    }
+
     public IEnumerator ReadQuestion(string TextToAdd, int answeramount, string answertext1, string answertext2, string answertext3, string answertext4)
     {
 

@@ -26,7 +26,15 @@ Param 4:String, Answer 2 ( Optional, null out if not an answer )
 Param 5:String, Answer 3 ( Optional, null out if not an answer )
 Param 6:String, Answer 4 ( Optional, null out if not an answer )
 
+LevelInText
+Param 1:String, the Skill you want to Level, options:
+Marksmanship, Intimidation, Strength
+Mechanical, ReactionSpeed, Coordination
+economical, theoretical, knowledge
+stability, empathy, emotional
+Param 2:Flavor Text, what you di to get this skill point ( ex. You noticed x)
 
+THIS TEXT IS ALWAYS READ BY THE PLAYER AND DOES NOT INCREMENT THE DIALOGUE
 
 In any Text:
 
@@ -130,8 +138,10 @@ public class DialogueCitizen : DialogueManager
                     {
                         //p
                         yield return ReadTextEasy("\n\n\n\n\n\nIll take my chances.", false);
-                        //o
-                        yield return ReadTextEasy("\nI have to go now, bye.", false);
+
+                        yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+
+                        chat.closeChat();
                     }
 
                     if (playeranswer == 2)
@@ -158,8 +168,9 @@ public class DialogueCitizen : DialogueManager
                 if (playeranswer == 3)
                 {
                     //p
-                    yield return ReadTextEasy("\n\nNo, sorry. That's all I saw. Good luck with your investigation.", false);
+                    yield return ReadTextEasy("\n\nNo, sorry. That's all I saw. Good luck with your investigation.\n", false);
 
+                    yield return LevelInText("Stability", "Normal Interaction");
 
                     yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
 
@@ -170,7 +181,9 @@ public class DialogueCitizen : DialogueManager
             }
             if (playeranswer == 3)
             {
-                yield return ReadTextEasy("\n\nThanks for the tip, I'll go check it out.", false);
+                yield return ReadTextEasy("\n\n\n\n\nThanks for the tip, I'll go check it out.", false);
+
+                yield return LevelInText("Stability", "Normal Interaction");
 
                 yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
 
@@ -243,7 +256,7 @@ public class DialogueCitizen : DialogueManager
             if (playeranswer == 2)
             {
                 //p
-                yield return ReadTextEasy("\n\nI'm just asking questions.", false);
+                yield return ReadTextEasy("\n\n\n\nI'm just asking questions.", false);
                 //o
                 yield return ReadQuestion("\n\nWell, maybe you should ask someone else. I ain't got nothin' to say to the likes of you.", 3, "Alright, I'll leave you alone.", "Suit yourself.", "You're not making this easy.", null);
 
@@ -274,10 +287,12 @@ public class DialogueCitizen : DialogueManager
                 if (playeranswer == 3)
                 {
                     //p
-                    yield return ReadTextEasy("\n\n\nYou're not making this easy.", false);
+                    yield return ReadTextEasy("\n\n\nYou're not making this easy.\n\n\n", false);
 
                     //p
                     yield return ReadTextEasy("\n\nI ain't here for an interrogation, go back to your friends from Berylit!", false);
+
+                    yield return LevelInText("Intimidation", "Too far.");
 
                     yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
 
@@ -290,12 +305,16 @@ public class DialogueCitizen : DialogueManager
             if (playeranswer == 3)
             {
                 //p
-                yield return ReadTextEasy("\n\n\n\nI don't believe you. You're acting suspicious.", false);
+                yield return ReadTextEasy("\n\n\n\nI don't believe you. You're acting suspicious.\n\n\n\n", false);
                 //o
                 yield return ReadTextEasy("\n\n\nLucky yer saying this to men, point yer fingers at anybody else and you might not have any left, if you're catching my drift.", false);
 
-                //go back to start
+                yield return LevelInText("Intimidation", "Too far.");
 
+                yield return ReadText("\n\n<color=\"red\">------------</color>", false, 1);
+
+                chat.closeChat();
+                //end convo
             }
 
 
@@ -317,11 +336,13 @@ public class DialogueCitizen : DialogueManager
             //o
             yield return ReadTextEasy("\n\nDid you fall from the moon? Before they shat down the Berylit mines, Berylitians were famous for mining gems like crazy, that's where they got all this cash from...", false);
             //p
-            yield return ReadTextEasy("\n\n\n\n\n\n\nDo you personally know anyone from Berylit?", false);
+            yield return ReadTextEasy("\n\n\n\n\n\n\nDo you personally know anyone from Berylit?\n\n\n\n\n\n\n", false);
             //o
             yield return ReadTextEasy("\n\n\nDo I know anyone from Berylit... Don't make me LAUGH! There's this fancy bloke downtown, name's Kalvin, he thinks he's SOO special for havin' luxury, tell ya what, if you get him locked up, I'll owe ya one hehe.", false);
 
-            yield return ReadText("\n\n\n\n\n\n\n<color=\"red\">------------</color>", false, 1);
+            yield return LevelInText("knowledge", "The Berylitan Mines.");
+
+            yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
 
             chat.closeChat();
             //end of convo
