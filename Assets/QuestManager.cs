@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using static Quest;
 
 public class QuestManager : MonoBehaviour
 {
-    public Item[] Quest = new Item[20];
-    public GameObject[] slots = new GameObject[20];
+    public Quest[] quests = new Quest[6];
+    public GameObject[] questSlots = new GameObject[6];
 
     void Start() {
-        Item testItem = new Item();
-
-        for(int i = 0; i < slots.Length; i++){
-            slots[i] = GameObject.Find("InvSlot" + i);
-            inventory[i] = new Item {name = "none"};
-            Debug.Log("Name of items in array:" + inventory[i].name);
+        for(int i = 0; i < questSlots.Length; i++){
+            questSlots[i] = GameObject.Find("Quest" + i);
+            quests[i] = new Quest {name = "none"};
+            Debug.Log("Name of items in array:" + quests[i].name);
         }
         
     }
@@ -23,27 +22,27 @@ public class QuestManager : MonoBehaviour
 
 
         void Update() {
-        for(int i = 0; i < slots.Length; i++){
-            if(inventory[i].name != "none"){
-                slots[i].GetComponent<Image>().enabled = true;
-                slots[i].GetComponent<Image>().sprite = inventory[i].sprite;
-            } else {
-                slots[i].GetComponent<Image>().enabled = false;
+            for(int i = 0; i < questSlots.Length; i++){
+                if(quests[i].name != "none"){
+                    questSlots[i].GetComponent<TextMeshProUGUI>().enabled = true;
+                    questSlots[i].GetComponent<TextMeshProUGUI>().text = quests[i].name;
+                } else {
+                    questSlots[i].GetComponent<TextMeshProUGUI>().enabled = false;
+                }
             }
-        }
 
     }
 
-    public void addItem(Item pItem){
-        for(int i = 0; i < slots.Length; i++){
-            if(inventory[i].name == "none"){
-                inventory[i] = pItem;
+    public void addQuest(Quest pQuest){
+        for(int i = 0; i < questSlots.Length; i++){
+            if(quests[i].name == "none"){
+                quests[i] = pQuest;
                 break;
             }
         }
     }
 
-    public void removeItem(int Slot){
-        inventory[Slot] = new Item {name = "none"};
+    public void removeQuest(int Slot){
+        quests[Slot] = new Quest {name = "none"};
     }
 }
