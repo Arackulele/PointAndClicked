@@ -586,8 +586,8 @@ GameObject:
   - component: {fileID: 40329558}
   - component: {fileID: 40329562}
   - component: {fileID: 40329561}
-  - component: {fileID: 40329560}
   - component: {fileID: 40329559}
+  - component: {fileID: 40329563}
   m_Layer: 5
   m_Name: Quest3
   m_TagString: Untagged
@@ -658,20 +658,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 40329561}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &40329560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40329557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf156e166638fb9db8c4990647eab146, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  didthisreturn: 0
+      m_Calls:
+      - m_Target: {fileID: 40329563}
+        m_TargetAssemblyTypeName: QuestSlot, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &40329561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,8 +718,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -769,6 +768,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40329557}
   m_CullTransparentMesh: 1
+--- !u!114 &40329563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40329557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f9b488eca46909cb716aec6f8277ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &47232429
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,8 +961,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85.62744, y: 68.124}
-  m_SizeDelta: {x: 304.2484, y: 136.25}
+  m_AnchoredPosition: {x: 85.62744, y: 62.792}
+  m_SizeDelta: {x: 304.2484, y: 125.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &49078526
 MonoBehaviour:
@@ -986,10 +997,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This is a placeholder Quest description that you wont see in Game,
-
-    big
-    balls'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bb1b4db93217164eac7e6ae8c99710b, type: 2}
   m_sharedMaterial: {fileID: -3533114025956500034, guid: 9bb1b4db93217164eac7e6ae8c99710b, type: 2}
@@ -1052,7 +1060,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.66456604, y: 0, z: -0.5294609, w: -0.6645889}
+  m_margin: {x: -0.66456604, y: 1.5148773, z: -0.5294609, w: -0.6645889}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1077,13 +1085,14 @@ GameObject:
   - component: {fileID: 87718856}
   - component: {fileID: 87718860}
   - component: {fileID: 87718859}
+  - component: {fileID: 87718861}
   m_Layer: 5
   m_Name: Quests
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &87718856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1153,6 +1162,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87718855}
   m_CullTransparentMesh: 1
+--- !u!114 &87718861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87718855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07df75667cbf9c46b9a6239982d5d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  questSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &91376685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2288,9 +2323,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current Objective:
+  m_text: '
 
-    Find the guy who did it'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bb1b4db93217164eac7e6ae8c99710b, type: 2}
   m_sharedMaterial: {fileID: -3533114025956500034, guid: 9bb1b4db93217164eac7e6ae8c99710b, type: 2}
@@ -2320,9 +2355,9 @@ MonoBehaviour:
   m_fontSize: 17
   m_fontSizeBase: 17
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 8
+  m_fontSizeMax: 17
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -2513,8 +2548,8 @@ GameObject:
   - component: {fileID: 295426265}
   - component: {fileID: 295426269}
   - component: {fileID: 295426268}
-  - component: {fileID: 295426267}
   - component: {fileID: 295426266}
+  - component: {fileID: 295426270}
   m_Layer: 5
   m_Name: Quest1
   m_TagString: Untagged
@@ -2585,20 +2620,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 295426268}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &295426267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 295426264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf156e166638fb9db8c4990647eab146, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  didthisreturn: 0
+      m_Calls:
+      - m_Target: {fileID: 295426270}
+        m_TargetAssemblyTypeName: QuestSlot, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &295426268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2646,8 +2680,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2696,6 +2730,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295426264}
   m_CullTransparentMesh: 1
+--- !u!114 &295426270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295426264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f9b488eca46909cb716aec6f8277ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &299231968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2836,12 +2882,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Info:
-
-    -Person x said to talk to person y about it
-
-    -You found
-    out where the objective is'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bb1b4db93217164eac7e6ae8c99710b, type: 2}
   m_sharedMaterial: {fileID: -3533114025956500034, guid: 9bb1b4db93217164eac7e6ae8c99710b, type: 2}
@@ -6394,8 +6435,8 @@ GameObject:
   - component: {fileID: 901928440}
   - component: {fileID: 901928444}
   - component: {fileID: 901928443}
-  - component: {fileID: 901928442}
   - component: {fileID: 901928441}
+  - component: {fileID: 901928445}
   m_Layer: 5
   m_Name: Quest5
   m_TagString: Untagged
@@ -6466,20 +6507,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 901928443}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &901928442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901928439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf156e166638fb9db8c4990647eab146, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  didthisreturn: 0
+      m_Calls:
+      - m_Target: {fileID: 901928445}
+        m_TargetAssemblyTypeName: QuestSlot, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &901928443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6527,8 +6567,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6577,6 +6617,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901928439}
   m_CullTransparentMesh: 1
+--- !u!114 &901928445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901928439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f9b488eca46909cb716aec6f8277ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &906748507
 GameObject:
   m_ObjectHideFlags: 0
@@ -6825,8 +6877,8 @@ GameObject:
   - component: {fileID: 919690777}
   - component: {fileID: 919690781}
   - component: {fileID: 919690780}
-  - component: {fileID: 919690779}
   - component: {fileID: 919690778}
+  - component: {fileID: 919690782}
   m_Layer: 5
   m_Name: Quest2
   m_TagString: Untagged
@@ -6897,20 +6949,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 919690780}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &919690779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919690776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf156e166638fb9db8c4990647eab146, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  didthisreturn: 0
+      m_Calls:
+      - m_Target: {fileID: 919690782}
+        m_TargetAssemblyTypeName: QuestSlot, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &919690780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6958,8 +7009,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7008,6 +7059,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919690776}
   m_CullTransparentMesh: 1
+--- !u!114 &919690782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919690776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f9b488eca46909cb716aec6f8277ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &988489481
 GameObject:
   m_ObjectHideFlags: 0
@@ -7019,8 +7082,8 @@ GameObject:
   - component: {fileID: 988489482}
   - component: {fileID: 988489486}
   - component: {fileID: 988489485}
-  - component: {fileID: 988489484}
   - component: {fileID: 988489483}
+  - component: {fileID: 988489487}
   m_Layer: 5
   m_Name: Quest0
   m_TagString: Untagged
@@ -7091,20 +7154,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 988489485}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &988489484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988489481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf156e166638fb9db8c4990647eab146, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  didthisreturn: 0
+      m_Calls:
+      - m_Target: {fileID: 988489487}
+        m_TargetAssemblyTypeName: QuestSlot, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &988489485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7152,8 +7214,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7202,6 +7264,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988489481}
   m_CullTransparentMesh: 1
+--- !u!114 &988489487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988489481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f9b488eca46909cb716aec6f8277ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1005340626
 GameObject:
   m_ObjectHideFlags: 0
@@ -11029,8 +11103,8 @@ GameObject:
   - component: {fileID: 1734968901}
   - component: {fileID: 1734968905}
   - component: {fileID: 1734968904}
-  - component: {fileID: 1734968903}
   - component: {fileID: 1734968902}
+  - component: {fileID: 1734968906}
   m_Layer: 5
   m_Name: Quest4
   m_TagString: Untagged
@@ -11101,20 +11175,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1734968904}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1734968903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734968900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf156e166638fb9db8c4990647eab146, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  didthisreturn: 0
+      m_Calls:
+      - m_Target: {fileID: 1734968906}
+        m_TargetAssemblyTypeName: QuestSlot, Assembly-CSharp
+        m_MethodName: onClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1734968904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11164,8 +11237,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11214,6 +11287,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1734968900}
   m_CullTransparentMesh: 1
+--- !u!114 &1734968906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734968900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0f9b488eca46909cb716aec6f8277ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1745152600
 GameObject:
   m_ObjectHideFlags: 0
@@ -11978,7 +12063,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quest Name
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bb1b4db93217164eac7e6ae8c99710b, type: 2}
   m_sharedMaterial: {fileID: -3533114025956500034, guid: 9bb1b4db93217164eac7e6ae8c99710b, type: 2}
@@ -12005,15 +12090,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 8192
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -12980,6 +13065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Manager: {fileID: 1257202242}
+  questManager: {fileID: 0}
 --- !u!1 &1995823773
 GameObject:
   m_ObjectHideFlags: 0

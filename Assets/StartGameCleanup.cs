@@ -22,6 +22,7 @@ public class StartGameCleanup : MonoBehaviour
         GameObject.Find("Street2Placeholder").SetActive(false);
         GameObject.Find("Inv").GetComponent<Image>().enabled = true;
         GameObject.Find("Inv").SetActive(false);
+        GameObject.Find("Quests").SetActive(false);
 
 
 
