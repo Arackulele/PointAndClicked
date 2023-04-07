@@ -40,7 +40,7 @@ public class QuestSlot : MonoBehaviour
         if(Manager.quests[slotNum].name!= "none"){
             puTitle.text = Manager.quests[slotNum].name;
             puDesc.text = Manager.quests[slotNum].description;
-            puAddInfo.text = Manager.quests[slotNum].name;
+            puAddInfo.text = Manager.quests[slotNum].additional_info;
             puObjective.text = Manager.quests[slotNum].task;
         }
     }
