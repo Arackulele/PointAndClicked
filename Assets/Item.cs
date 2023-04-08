@@ -9,8 +9,9 @@ public class Item : Object
     public Sprite sprite;
     public string description;
     public string name;
+    public string intername;
     
-    void Start(string pName, string pDesc, string pClass) {
+    void Start() {
         
     }
 

@@ -62,6 +62,7 @@
      <Compile Include="Assets/terstenvmoneyscript.cs" />
      <Compile Include="Assets/Post-Processing/Assets/Zoom/Zoom.cs" />
      <Compile Include="Assets/Post-Processing/Assets/Fog/Fog.cs" />
+     <Compile Include="Assets/QuestSlot.cs" />
      <Compile Include="Assets/assets/TitleScreen/foregroundgrassmovement.cs" />
      <Compile Include="Assets/Item.cs" />
      <Compile Include="Assets/ItemIndex.cs" />
