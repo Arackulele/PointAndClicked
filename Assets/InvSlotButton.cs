@@ -7,22 +7,26 @@ using TMPro;
 
 public class InvSlotButton : MonoBehaviour
 {
-    InvManager Manager;
-    int slotNum;
-    GameObject invPopUp;
-    TextMeshProUGUI puTitle;
-    TextMeshProUGUI puDesc;
-    GameObject puInspect;
-    GameObject puDiscard;
-    GameObject chat;
+    public InvManager Manager;
+    public int slotNum;
+    public GameObject invPopUp;
+    public TextMeshProUGUI puTitle;
+    public TextMeshProUGUI puDesc;
+    public GameObject puInspect;
+    public GameObject puDiscard;
+    public GameObject chat;
 
     void Start() {
-        invPopUp = GameObject.Find("InvPopUp");
         puTitle = GameObject.Find("PUTitle").GetComponent<TextMeshProUGUI>();
         puDesc = GameObject.Find("PUDesc").GetComponent<TextMeshProUGUI>();
         puInspect = GameObject.Find("PUInspect");
         puDiscard = GameObject.Find("PUDiscard");
         Manager = GameObject.Find("Inv").GetComponent<InvManager>();
+
+
+        //i dont get invpopup here beacause of a workaround, so i dont have to have the InvPopUp Object enabled in the editor, tahts why its public
+
+
         // slotNum = System.Convert.ToInt32(gameObject.name);
         string slot = gameObject.name;
         int value = 0;
@@ -37,12 +41,14 @@ public class InvSlotButton : MonoBehaviour
         Debug.Log(slotNum);
     }
 
-    void Update() {
-        
-    }
+
+
 
     public void onClick(){
-        if(Manager.inventory[slotNum].itemClass.Contains("equip")){
+
+        puInspect.GetComponent<InspectButton>().isequipped = false;
+
+        if (Manager.inventory[slotNum].itemClass.Contains("equip")){
             puInspect.GetComponent<TextMeshProUGUI>().text = "Equip";
         } else {
             puInspect.GetComponent<TextMeshProUGUI>().text = "Inspect";

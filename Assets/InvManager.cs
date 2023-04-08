@@ -8,7 +8,9 @@ using static ItemIndex;
 public class InvManager : MonoBehaviour
 {
     public Item[] inventory = new Item[20];
+    public Item[] equipinv = new Item[4];
     public GameObject[] slots = new GameObject[20];
+    public GameObject[] equipslots = new GameObject[20];
 
     void Start() {
         Item testItem = new Item();
@@ -16,9 +18,14 @@ public class InvManager : MonoBehaviour
         for(int i = 0; i < slots.Length; i++){
             slots[i] = GameObject.Find("InvSlot" + i);
             inventory[i] = new Item {name = "none"};
-            Debug.Log("Name of items in array:" + inventory[i].name);
         }
-        
+
+        for (int i = 0; i < equipslots.Length; i++)
+        {
+            equipslots[i] = GameObject.Find("EquipSlot" + i);
+            equipinv[i] = new Item { name = "none" };
+        }
+
     }
 
 
@@ -30,6 +37,19 @@ public class InvManager : MonoBehaviour
                 slots[i].GetComponent<Image>().sprite = inventory[i].sprite;
             } else {
                 slots[i].GetComponent<Image>().enabled = false;
+            }
+        }
+
+        for (int i = 0; i < equipslots.Length; i++)
+        {
+            if (equipinv[i].name != "none")
+            {
+                equipslots[i].GetComponent<Image>().enabled = true;
+                equipslots[i].GetComponent<Image>().sprite = equipinv[i].sprite;
+            }
+            else
+            {
+                equipslots[i].GetComponent<Image>().enabled = false;
             }
         }
 

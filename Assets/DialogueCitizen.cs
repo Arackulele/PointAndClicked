@@ -66,6 +66,7 @@ public class DialogueCitizen : DialogueManager
 
     public IEnumerator TextStartChar()
     {
+        charascript.otherchardialogue = "Dymitr Gotthard";
 
         yield return new WaitForSeconds(0.5f);
 

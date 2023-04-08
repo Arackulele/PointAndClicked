@@ -29,6 +29,7 @@ public class ChatScript : MonoBehaviour
     public void openChat(){
 
         GameObject.Find("You").GetComponent<TextMeshProUGUI>().enabled = true;
+        GameObject.Find("OtherPerson").GetComponent<TextMeshProUGUI>().enabled = true;
         chat.GetComponent<Image>().enabled = true;
         Blackout.GetComponent<Image>().enabled = true;
         chatx.GetComponent<Image>().enabled = true;
@@ -41,6 +42,7 @@ public class ChatScript : MonoBehaviour
     {
 
         GameObject.Find("You").GetComponent<TextMeshProUGUI>().enabled = false;
+        GameObject.Find("OtherPerson").GetComponent<TextMeshProUGUI>().enabled = false;
 
         GameObject.Find("DialogueTree").GetComponent<TextMeshProUGUI>().text = "";
         GameObject.Find("DialogueTree2").GetComponent<TextMeshProUGUI>().text = "";

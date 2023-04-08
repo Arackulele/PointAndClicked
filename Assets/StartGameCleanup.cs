@@ -7,18 +7,25 @@ using static ItemIndex;
 
 public class StartGameCleanup : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+
+    public GameObject Quests;
+    public GameObject ScrollView;
+    public GameObject InvPopUp;
+
     void Start()
     {
+        Quests.SetActive(true);
+        ScrollView.SetActive(true);
+        InvPopUp.SetActive(true);
         StartCoroutine(HideOnStart());
     }
 
     public IEnumerator HideOnStart()
     {
-
         yield return new WaitForSeconds(0.05f);
-        GameObject.Find("InvPopUp").SetActive(false);
-        GameObject.Find("Scroll View").SetActive(false);
+        InvPopUp.SetActive(false);
+        ScrollView.SetActive(false);
         GameObject.Find("Street2Placeholder").SetActive(false);
         GameObject.Find("Inv").GetComponent<Image>().enabled = true;
         GameObject.Find("Inv").SetActive(false);

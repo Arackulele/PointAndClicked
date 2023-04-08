@@ -6,7 +6,12 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
 
+    //increment in conversation in dialogue
+    //important for ReadTextEasy Method
     public int increment = 0;
+
+    //Person youre talking to in dialogue
+    public string otherchardialogue;
 
     // World stuff
     public float time = 08.00f;
