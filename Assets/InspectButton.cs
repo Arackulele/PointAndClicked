@@ -23,15 +23,26 @@ public class InspectButton : MonoBehaviour
     public void onClick(){
 
         string itemname = GameObject.Find("Inv").GetComponent<InvManager>().inventory[currentSlot].intername;
-        Debug.Log("Dialogue" + itemname);
 
-        Component Dialogue = chat.GetComponent("Dialogue" + itemname);
 
-        if(gameObject.GetComponent<TextMeshProUGUI>().text == "Inspect"){
 
-            where Dialogue : DialogueManager {
-                 DialogueManager callDialogue  = chat.GetComponent("Dialogue" + itemname);
-                callDialogue.call();
+
+        if (gameObject.GetComponent<TextMeshProUGUI>().text == "Inspect"){
+
+
+            //I was gonna make this so it automatically gets the name and calls the script of that name
+            //but unity is so stupid and unwieldy with this that id rather shoot myself than make that work
+            //so im just using a switch statement for each item
+            //sue me
+            switch (itemname)
+            {
+                default:
+                case ("TornNote"):
+                    chat.GetComponent<DialogueTornNote>().call();
+
+                    break;
+
+
             }
 
         } else {
