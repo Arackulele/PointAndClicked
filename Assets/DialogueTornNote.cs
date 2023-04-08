@@ -50,13 +50,13 @@ public class DialogueTornNote : DialogueManager
 
     public void call()
     {
-        Debug.Log("called textstart");
+        Debug.Log("called textstart but in the dialogue torn note you imbecile");
 
-        StartCoroutine(TextStartChar());
+        StartCoroutine(TextStartTornNote());
 
     }
 
-    public IEnumerator TextStartChar()
+    public IEnumerator TextStartTornNote()
     {
 
         yield return new WaitForSeconds(0.5f);
