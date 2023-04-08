@@ -25,12 +25,17 @@ public class InspectButton : MonoBehaviour
         string itemname = GameObject.Find("Inv").GetComponent<InvManager>().inventory[currentSlot].intername;
         Debug.Log("Dialogue" + itemname);
 
+        Component Dialogue = chat.GetComponent("Dialogue" + itemname);
+
         if(gameObject.GetComponent<TextMeshProUGUI>().text == "Inspect"){
-            DialogueManager callDialogue = chat.GetComponent("Dialogue" + itemname) as DialogueManager;
-            callDialogue.call();
+
+            where Dialogue : DialogueManager {
+                 DialogueManager callDialogue  = chat.GetComponent("Dialogue" + itemname);
+                callDialogue.call();
+            }
+
         } else {
             // equipping the thing
         }
-
     }
 }
