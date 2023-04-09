@@ -326,10 +326,10 @@ public class DialogueManager : MonoBehaviour
             if (c == '<') { skip = true; }
             else if (c == '>') { skip = false; }
 
-            if (c == '.' || c == '?' || c == '!') yield return new WaitForSeconds(0.3f);
-            else if(c == ',') yield return new WaitForSeconds(0.15f);
-            else if(c == '%') yield return new WaitForSeconds(1f);
-            else if (skip == false ) yield return new WaitForSeconds(0.05f);
+            if (c == '.' || c == '?' || c == '!') yield return new WaitForSeconds(0.3f / charascript.dialoguespeed);
+            else if(c == ',') yield return new WaitForSeconds(0.15f / charascript.dialoguespeed);
+            else if(c == '%') yield return new WaitForSeconds(1f / charascript.dialoguespeed);
+            else if (skip == false ) yield return new WaitForSeconds(0.05f / charascript.dialoguespeed);
         }
     }
 
