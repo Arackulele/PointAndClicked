@@ -10,6 +10,8 @@ public class Item : Object
     public string description;
     public string name;
     public string intername;
+    public List<string> buffs = new List<string>();
+    public List<string> debuffs = new List<string>();
     
     void Start() {
         

@@ -74,10 +74,12 @@
      <Compile Include="Assets/assets/TitleScreen/Sceneloader.cs" />
      <Compile Include="Assets/Post-Processing/Assets/Edge Detection/EdgeDetector.cs" />
      <Compile Include="Assets/Character.cs" />
+     <Compile Include="Assets/EquipSlotButton.cs" />
      <Compile Include="Assets/Post-Processing/Assets/Kuwahara Filter/AnisotropicKuwahara.cs" />
      <Compile Include="Assets/assets/TitleScreen/clouds.cs" />
      <Compile Include="Assets/Post-Processing/Assets/Pixel Art/Ditherer.cs" />
      <Compile Include="Assets/Dialogue.cs" />
+     <Compile Include="Assets/otherpersonupdate.cs" />
      <Compile Include="Assets/Post-Processing/Assets/ImageBlitter/ImageBlitter.cs" />
      <Compile Include="Assets/Post-Processing/Assets/Edge Detection/DifferenceOfGaussians.cs" />
      <Compile Include="Assets/Simple-CRT-Shader/Assets/SimpleCRTShader/Script/CRTPostEffecter.cs" />
@@ -94,11 +96,13 @@
      <Compile Include="Assets/Post-Processing/Assets/Chromatic Aberration/ChromaticAberration.cs" />
      <Compile Include="Assets/Post-Processing/Assets/Bloom/Bloom.cs" />
      <Compile Include="Assets/Post-Processing/Assets/Edge Detection/ExtendedDoG.cs" />
+     <Compile Include="Assets/Unity.VisualScripting.Generated/VisualScripting.Core/AotStubs.cs" />
      <None Include="Assets/Post-Processing/Assets/Pixel Art/PixelArtFilter.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/Post-Processing/Assets/Edge Detection/EdgeDetect.shader" />
      <None Include="Assets/Post-Processing/Assets/Zoom/Zoom.shader" />
+     <None Include="Assets/Text-refs/Names.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
      <None Include="Assets/Post-Processing/Assets/Chromatic Aberration/ChromaticAberration.shader" />
      <None Include="Assets/Post-Processing/Assets/Color Blindness/Protanomaly.cginc" />
@@ -119,6 +123,7 @@
      <None Include="Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF.shader" />
+     <None Include="Assets/Text-refs/ToDo.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
      <None Include="Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
      <None Include="Assets/Post-Processing/Assets/Color Correction/ColorCorrection.shader" />
@@ -133,6 +138,7 @@
      <None Include="Assets/Post-Processing/Assets/Kuwahara Filter/AnisotropicKuwahara.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets/Post-Processing/Assets/Pixel Art/Dither.shader" />
+     <None Include="Assets/Unity.VisualScripting.Generated/VisualScripting.Core/link.xml" />
      <None Include="Assets/Post-Processing/Assets/Color Blindness/Deuteranomaly.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
      <None Include="Assets/Simple-CRT-Shader/Assets/SimpleCRTShader/shader/CRT.shader" />

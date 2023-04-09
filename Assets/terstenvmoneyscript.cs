@@ -21,7 +21,17 @@ public class terstenvmoneyscript : MonoBehaviour
         rebuildSovietOnion = new Quest {name = "Rebuild the Soviet Onion", description = "You need find Comrade Trotsky and help him farm some Onion to reestablish the great communist Soviet Onion Farm", additional_info = "-haha funny Soviet Onion do it now you capitalist pig", task = "Current Objective: \nfind Comrade Trotsky to start rebuilding the farm"};
         Manager = GameObject.Find("Inv");
         Note = new Item {name = "Torn Note", description = "A torn up Note, you can still read some of the writing.", sprite = Index.GetComponent<ItemIndex>().TornNoteSprite, itemClass = "default", intername = "TornNote"};
-        ushanka = new Item {name = "Ushanka", description = "A very communist fur hat", sprite = Index.GetComponent<ItemIndex>().TornNoteSprite, itemClass = "equip_hat", intername = "ushanka"};
+
+        ushanka = new Item {name = "Ushanka",
+
+         description = "A very communist fur hat\n </color>\n<color=#5BC684> -1 Economical</color> No longer capitalist scum\n </color>\n<color=#5BC684> +1 Theoretical</color> Karl Moneybags Mark",
+
+          sprite = Index.GetComponent<ItemIndex>().TornNoteSprite,
+           itemClass = "equip_hat",
+            intername = "ushanka"};
+
+        ushanka.buffs.Add("theoretical");
+        ushanka.debuffs.Add("economical");
 
     }
 
