@@ -1,2 +1,5 @@
--Make it so Text options disappear when pressing invx ( Change it in chatscript )
--Make other characters name in Dialogue their text Color
+- Make it so Text options disappear when pressing invx ( Change it in chatscript )
+- Make other characters name in Dialogue their text Color
+- Settings menu:
+    - resolution how?
+- add quest / item methods to DialogueManager

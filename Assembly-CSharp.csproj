@@ -96,7 +96,7 @@
      <Compile Include="Assets/Post-Processing/Assets/Chromatic Aberration/ChromaticAberration.cs" />
      <Compile Include="Assets/Post-Processing/Assets/Bloom/Bloom.cs" />
      <Compile Include="Assets/Post-Processing/Assets/Edge Detection/ExtendedDoG.cs" />
-     <Compile Include="Assets/Unity.VisualScripting.Generated/VisualScripting.Core/AotStubs.cs" />
+     <Compile Include="Assets/SettingsMenu.cs" />
      <None Include="Assets/Post-Processing/Assets/Pixel Art/PixelArtFilter.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
@@ -138,7 +138,6 @@
      <None Include="Assets/Post-Processing/Assets/Kuwahara Filter/AnisotropicKuwahara.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets/Post-Processing/Assets/Pixel Art/Dither.shader" />
-     <None Include="Assets/Unity.VisualScripting.Generated/VisualScripting.Core/link.xml" />
      <None Include="Assets/Post-Processing/Assets/Color Blindness/Deuteranomaly.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
      <None Include="Assets/Simple-CRT-Shader/Assets/SimpleCRTShader/shader/CRT.shader" />
