@@ -304,7 +304,7 @@ public class DialogueTamra : DialogueManager
 
         //o
         charascript.otherchardialogue = "Tamra Merina";
-        yield return ReadTextEasy("\n\n\n\nAnytime, dear. And if you happen to find anything juicy, you know where to find me.", false);
+        yield return ReadTextEasy("\n\n\n\n\nAnytime, dear. And if you happen to find anything juicy, you know where to find me.", false);
 
         charascript.increment++;
 
@@ -319,7 +319,7 @@ public class DialogueTamra : DialogueManager
         yield return ReadTextEasy("\n\n\nOh, don't worry about him. He knows how to handle himself. Right, dear?", false);
 
         //p
-        yield return ReadTextEasy("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou know im a detective , right? This is my job.", false);
+        yield return ReadTextEasy("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou know im a detective , right? This is my job.", false);
 
         //o
         yield return ReadTextEasy("\n\n\n\nOh, that explains the Questions.", false);
