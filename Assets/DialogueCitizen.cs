@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using static Dialogue;
+using static Quest;
 
 
 /* 
@@ -148,17 +149,28 @@ public class DialogueCitizen : DialogueManager
                     if (playeranswer == 2)
                     {
                         //p
-                        yield return ReadTextEasy("\n\nCan you think of anything else?", false);
+                        yield return ReadTextEasy("\n\n\n\n\n\nCan you think of anything else?", false);
                         //0
                         yield return ReadTextEasy("\n\nDo I look like a gossiper? If yer want 'sum gossip talk to Tamra downtown, she's sure to have info on eeeeveryone in here.", false);
                         //p
-                        yield return ReadTextEasy("\n\nTamra huh?", false);
+                        yield return ReadTextEasy("\n\n\n\n\n\nTamra huh?\n\n\n", false);
                         //0
                         yield return ReadTextEasy("\n\nDowntown, left to the fountain and right to Vladde's.", false);
 
                         //quest unlock Tamara here
 
-                        yield return ReadText("\n\n\n<color=\"red\">------------</color>", false, 1);
+                        Quest Tamra;
+
+                        Tamra = new Quest
+                        {
+                            name = "Find and Question Tamra",
+                            description = "Dymitr told you to go talk to Tamra downtown to get more Info on the murder and everyone else in town, shes known to gossip.",
+                            task = "Go downtown and search for Tamra"
+                        };
+
+                        yield return questInText(Tamra);
+
+                        yield return ReadText("\n\n\n\n<color=\"red\">------------</color>", false, 1);
 
                         chat.closeChat();
 

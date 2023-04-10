@@ -12,6 +12,8 @@ public class SettingsMenu : MonoBehaviour
     public GameObject toggleShader;
     public GameObject toggleColor;
     public GameObject SlideSpeed;
+    public GameObject contrast;
+    public GameObject gamma;
 
     void Start(){
         chara = GameObject.Find("Character").GetComponent<Character>();
@@ -19,9 +21,11 @@ public class SettingsMenu : MonoBehaviour
 
     void getShit()
     {
-    toggleShader = GameObject.Find("ToggleShader");
-    toggleColor = GameObject.Find("ToggleColorPP");
-    SlideSpeed = GameObject.Find("DialogueSpeed");
+        toggleShader = GameObject.Find("ToggleShader");
+        toggleColor = GameObject.Find("ToggleColorPP");
+        SlideSpeed = GameObject.Find("DialogueSpeed");
+        contrast = GameObject.Find("contrast");
+        gamma = GameObject.Find("gamma");
 
     }
 
@@ -60,6 +64,24 @@ public class SettingsMenu : MonoBehaviour
         getShit();
 
         chara.dialoguespeed = (SlideSpeed.GetComponent<Scrollbar>().value*2) + 0.5f;
+
+
+    }
+
+    public void onChangeContrast()
+    {
+        getShit();
+        float cont = (contrast.GetComponent<Scrollbar>().value) + 0.6f;
+        GameObject.Find("Main Camera").GetComponent<ColorCorrection>().contrast = new Vector3(cont, cont, cont);
+
+    }
+
+    public void onChangeGamma()
+    {
+
+        getShit();
+
+        GameObject.Find("Main Camera").GetComponent<GammaCorrector>().gamma = (gamma.GetComponent<Scrollbar>().value) + 0.6f;
 
 
     }

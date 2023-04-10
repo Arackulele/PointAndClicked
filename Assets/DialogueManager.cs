@@ -5,6 +5,8 @@ using TMPro;
 using static Dialogue;
 using static Character;
 using static ChatScript;
+using static Quest;
+using static QuestManager;
 
 
 public class DialogueManager : MonoBehaviour
@@ -29,6 +31,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject chara;
     public Character charascript;
     public ChatScript chat;
+    public QuestManager qmanager;
 
 
     Answer answer1;
@@ -52,6 +55,7 @@ public class DialogueManager : MonoBehaviour
 
     public void setup()
     {
+        qmanager = GameObject.Find("Quests").GetComponent<QuestManager>();
 
         chara = GameObject.Find("Character");
         charascript = chara.GetComponent<Character>();
@@ -150,7 +154,7 @@ public class DialogueManager : MonoBehaviour
             default:
             case "Marksmanship":
 
-                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel  + "</color>\n<color=#A02B48>" + Flavour + "</color>";
+                yield return compoundtext = "\n\n<color=\"white\">+1 " + SkillToLevel + "</color>\n<color=#A02B48>" + Flavour + "</color>";
 
                 break;
             case "Intimidation":
@@ -303,7 +307,7 @@ public class DialogueManager : MonoBehaviour
 
         yield return ReadText("Test Text", false, 1);
 
-        yield return  ReadText("\n<color=\"red\">Test Text</color>", false, 2);
+        yield return ReadText("\n<color=\"red\">Test Text</color>", false, 2);
 
         yield return ReadText("\nTest Text", false, 1);
 
@@ -327,28 +331,32 @@ public class DialogueManager : MonoBehaviour
             else if (c == '>') { skip = false; }
 
             if (c == '.' || c == '?' || c == '!') yield return new WaitForSeconds(0.3f / charascript.dialoguespeed);
-            else if(c == ',') yield return new WaitForSeconds(0.15f / charascript.dialoguespeed);
-            else if(c == '%') yield return new WaitForSeconds(1f / charascript.dialoguespeed);
-            else if (skip == false ) yield return new WaitForSeconds(0.05f / charascript.dialoguespeed);
+            else if (c == ',') yield return new WaitForSeconds(0.15f / charascript.dialoguespeed);
+            else if (c == '%') yield return new WaitForSeconds(1f / charascript.dialoguespeed);
+            else if (skip == false) yield return new WaitForSeconds(0.05f / charascript.dialoguespeed);
         }
     }
 
     public IEnumerator waitForKeyPress(KeyCode key) // blatantly stolen
     {
         bool done = false;
-        while (!done) 
+        while (!done)
         {
             if (Input.GetKeyDown(key))
             {
-                done = true; 
+                done = true;
             }
-            yield return null; 
+            yield return null;
         }
 
 
     }
 
-
+    public IEnumerator questInText(Quest pQuest)
+    {
+        qmanager.addQuest(pQuest);
+        yield return ReadTextEasy("\n<color=\"white\">Added Quest:" + pQuest.name + "\n</color>" + pQuest.task, false);
+    }
 
 }
 
