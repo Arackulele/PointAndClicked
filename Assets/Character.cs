@@ -8,6 +8,8 @@ public class Character : MonoBehaviour
 
     public float dialoguespeed = 1f;
 
+    public float pitch = 1f;
+
     //increment in conversation in dialogue
     //important for ReadTextEasy Method
     public int increment = 0;

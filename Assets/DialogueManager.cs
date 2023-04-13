@@ -33,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     public ChatScript chat;
     public QuestManager qmanager;
 
+    float internalpitch;
 
     Answer answer1;
     Answer answer2;
@@ -96,13 +97,14 @@ public class DialogueManager : MonoBehaviour
         {
 
             Debug.Log("playing text");
-
+            internalpitch = charascript.pitch;
             yield return PlayText(Text, dialogueOther);
 
         }
         else
         {
             Debug.Log("playing text");
+            internalpitch = 1f;
             yield return PlayText(Text, dialogue);
 
         }
@@ -122,13 +124,14 @@ public class DialogueManager : MonoBehaviour
         {
 
             Debug.Log("playing text");
-
+            internalpitch = charascript.pitch;
             yield return PlayText(Text, dialogueOther);
 
         }
         else
         {
             Debug.Log("playing text");
+            internalpitch = 1f;
             yield return PlayText(Text, dialogue);
 
         }
@@ -333,7 +336,12 @@ public class DialogueManager : MonoBehaviour
             if (c == '.' || c == '?' || c == '!') yield return new WaitForSeconds(0.3f / charascript.dialoguespeed);
             else if (c == ',') yield return new WaitForSeconds(0.15f / charascript.dialoguespeed);
             else if (c == '%') yield return new WaitForSeconds(1f / charascript.dialoguespeed);
-            else if (skip == false) yield return new WaitForSeconds(0.05f / charascript.dialoguespeed);
+            else if (skip == false)
+            {
+                yield return new WaitForSeconds(0.05f / charascript.dialoguespeed);
+                gameObject.GetComponent<AudioSource>().pitch = internalpitch;
+                gameObject.GetComponent<AudioSource>().Play();
+            }
         }
     }
 

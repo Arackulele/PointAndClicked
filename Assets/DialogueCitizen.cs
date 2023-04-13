@@ -60,7 +60,6 @@ public class DialogueCitizen : DialogueManager
 
         setup();
 
-        dialogueOther.color = new Color(0.01176f, 0.09412f, 0.16078f);
     }
 
     public void call()
@@ -69,6 +68,9 @@ public class DialogueCitizen : DialogueManager
 
         StartCoroutine(TextStartChar());
 
+        dialogueOther.color = new Color(0.01176f, 0.09412f, 0.16078f);
+
+        charascript.pitch = 0.8f;
     }
 
     public IEnumerator TextStartChar()

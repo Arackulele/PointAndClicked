@@ -53,12 +53,15 @@ public class DialogueTamra : DialogueManager
 
         setup();
 
-        dialogueOther.color = new Color(0.18039f, 0.10196f, 0.19216f);
     }
 
     public void call()
     {
         Debug.Log("called textstart");
+
+        dialogueOther.color = new Color(0.18039f, 0.10196f, 0.19216f);
+
+        charascript.pitch = 1.1f;
 
         StartCoroutine(TextStartChar());
 

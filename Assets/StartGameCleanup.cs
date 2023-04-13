@@ -8,7 +8,6 @@ using static ItemIndex;
 public class StartGameCleanup : MonoBehaviour
 {
 
-
     public GameObject Quests;
     public GameObject ScrollView;
     public GameObject InvPopUp;
@@ -30,8 +29,5 @@ public class StartGameCleanup : MonoBehaviour
         GameObject.Find("Inv").GetComponent<Image>().enabled = true;
         GameObject.Find("Inv").SetActive(false);
         GameObject.Find("Quests").SetActive(false);
-
-
-
     }
 }
