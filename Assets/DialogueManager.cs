@@ -356,6 +356,8 @@ public class DialogueManager : MonoBehaviour
     {
         qmanager.addQuest(pQuest);
         yield return ReadTextEasy("\n<color=\"white\">Added Quest:" + pQuest.name + "\n</color>" + pQuest.task, false);
+
+        charascript.increment--;
     }
 
 }

@@ -37,6 +37,12 @@ Param 2:Flavor Text, what you di to get this skill point ( ex. You noticed x)
 
 THIS TEXT IS ALWAYS READ BY THE PLAYER AND DOES NOT INCREMENT THE DIALOGUE
 
+questInText
+ALways read by player and doesnt increment, similar to LevelInText
+Param1: Quest object
+
+For variables of the Quest Object, see the Quest class. The Text that gets read is the Quest name and Task
+
 In any Text:
 
 Tags are supported
