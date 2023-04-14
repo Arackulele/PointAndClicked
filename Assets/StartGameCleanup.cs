@@ -25,9 +25,11 @@ public class StartGameCleanup : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         InvPopUp.SetActive(false);
         ScrollView.SetActive(false);
-        GameObject.Find("Street2Placeholder").SetActive(false);
+        GameObject.Find("Street2").SetActive(false);
+        GameObject.Find("HotelRoomInterior").SetActive(false);
         GameObject.Find("Inv").GetComponent<Image>().enabled = true;
         GameObject.Find("Inv").SetActive(false);
         GameObject.Find("Quests").SetActive(false);
+        GameObject.Find("DialogueOption1").SetActive(false);
     }
 }

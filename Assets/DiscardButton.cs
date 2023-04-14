@@ -19,7 +19,9 @@ public class DiscardButton : MonoBehaviour
     }
 
     public void onClick(){
-        manager.removeItem(slot);
+
+        if (manager.inventory[slot].important);
+        else manager.removeItem(slot);
 
         GameObject.Find("InvPopUp").SetActive(false);
     }

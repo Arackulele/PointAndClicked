@@ -13,6 +13,7 @@ public class ChatScript : MonoBehaviour
     GameObject Blackout;
     GameObject chatx;
     GameObject ScrollView;
+    public GameObject DialogueOption;
 
 
     void Start() {
@@ -27,7 +28,7 @@ public class ChatScript : MonoBehaviour
 
 
     public void openChat(){
-
+        DialogueOption.SetActive(true);
         GameObject.Find("You").GetComponent<TextMeshProUGUI>().enabled = true;
         GameObject.Find("OtherPerson").GetComponent<TextMeshProUGUI>().enabled = true;
         chat.GetComponent<Image>().enabled = true;
@@ -52,6 +53,7 @@ public class ChatScript : MonoBehaviour
         chatx.GetComponent<Image>().enabled = false;
         chatx.GetComponent<Button>().enabled = false;
         ScrollView.SetActive(false);
+        GameObject.Find("DialogueOption1").SetActive(false);
 
         GameObject.Find("Character").GetComponent<Character>().increment = 0;
 
