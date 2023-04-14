@@ -338,9 +338,10 @@ public class DialogueManager : MonoBehaviour
             else if (c == '%') yield return new WaitForSeconds(1f / charascript.dialoguespeed);
             else if (skip == false)
             {
-                yield return new WaitForSeconds(0.05f / charascript.dialoguespeed);
-                gameObject.GetComponent<AudioSource>().pitch = internalpitch;
+                gameObject.GetComponent<AudioSource>().Stop();
+                gameObject.GetComponent<AudioSource>().pitch = (internalpitch+ Random.Range(-0.005f, 0.005f));
                 gameObject.GetComponent<AudioSource>().Play();
+                yield return new WaitForSeconds(0.05f / charascript.dialoguespeed);
             }
         }
     }
